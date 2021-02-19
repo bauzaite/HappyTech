@@ -37,8 +37,14 @@ namespace formsTest
 
         private void GetData_Click(object sender, EventArgs e)
         {
-            DataSet dataSet = DatabaseConnection.getDatabaseConnection().getData();
+            string sqlQuery = "SELECT templateTitle, templateText FROM templates WHERE template_ID=16";
+            DataSet dataSet = DatabaseConnection.getData(sqlQuery);
             dgvDatabase1.DataSource = dataSet.Tables[0];
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

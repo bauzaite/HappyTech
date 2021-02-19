@@ -79,7 +79,7 @@
             // dgvDatabase1
             // 
             this.dgvDatabase1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatabase1.Location = new System.Drawing.Point(305, 146);
+            this.dgvDatabase1.Location = new System.Drawing.Point(67, 211);
             this.dgvDatabase1.Name = "dgvDatabase1";
             this.dgvDatabase1.Size = new System.Drawing.Size(240, 150);
             this.dgvDatabase1.TabIndex = 4;
@@ -94,8 +94,10 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.GetCon);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase1)).EndInit();
             this.ResumeLayout(false);
 
