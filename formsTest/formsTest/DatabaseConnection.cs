@@ -9,39 +9,60 @@ using System.Data.SqlClient;
 
 namespace formsTest
 {
-    class DatabaseConnection
+    static class DatabaseConnection
     {
-        private string connectionString;
-        private static DatabaseConnection instanceOfDatabaseConnection;
-        public DatabaseConnection()
-        {
-            connectionString = Properties.Settings.Default.formsTest;
-        }
-        // Open the connection
-        public static DatabaseConnection getDatabaseConnection()
-        {
-            if (instanceOfDatabaseConnection == null)
-            {
-                instanceOfDatabaseConnection = new DatabaseConnection();
-            }
-            return instanceOfDatabaseConnection;
-        }
-        public DataSet getData()
-        {
-            string sqlQuery = "SELECT * FROM TestTable";
+        private static string connectionString = Properties.Settings.Default.formsTest;
 
+        public static DataSet getData(string sqlQuery)
+        { 
             DataSet dataSet = new DataSet();
 
             SqlConnection sqlCon;
             using (sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlQuery, sqlCon);
                 dataAdapter.Fill(dataSet);
-
             }
             return dataSet;
+        }
+        public static void saveToDb(string sqlQuery, string templateTitle, string templateText)
+        {
+            SqlConnection sqlCon;
+            using (sqlCon = new SqlConnection(connectionString))
+            {
+                
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Parameters.AddWithValue("@templateTitle", templateTitle);
+                sqlCommand.Parameters.AddWithValue("@templateText", templateText);
+
+                sqlCon.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
+        public static bool getCredentials(string sqlQuery, string username, string password)
+        {
+            bool passwordCheck;
+            SqlConnection sqlCon;
+            using (sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    passwordCheck = true;
+                    reader.Close();
+                }
+                else 
+                {
+                    passwordCheck = false;
+                    reader.Close();
+                }
+            }
+            return passwordCheck;
         }
     }
 }
