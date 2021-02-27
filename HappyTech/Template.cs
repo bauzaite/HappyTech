@@ -1,23 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace HappyTech
 {
-    public class Template
+    /// <summary>
+    /// Class with a constructor that creates new template
+    /// </summary>
+    class Template
     {
-        int templateID;
-        string templateName;
-        int categoryID;
-        int textID;
-        bool templateSucc;
-        int employee;
+        public string templateTitle;
+        public string templateText;
+        public string templateCategory;
+        public int templateSuccessful;
 
-        public Template(int templateID, string templateName, int categoryID, int textID, bool templateSucc, int employee)
+        public Template(string templateTitle, string templateText, string templateCategory, int templateSuccessful)
         {
-            this.templateID = templateID;
-            this.templateName = templateName;
-            this.categoryID = categoryID;
-            this.textID = textID;
-            this.templateSucc = templateSucc;
-            this.employee = employee;
+            this.templateTitle = templateTitle;
+            this.templateText = templateText;
+            this.templateCategory = templateCategory;
+            this.templateSuccessful = templateSuccessful;
+        }
+        public override string ToString()
+        {
+            return templateTitle + " " + templateCategory + " " + templateText + " " + templateSuccessful;
         }
     }
 }
+
