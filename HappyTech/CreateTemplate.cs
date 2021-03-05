@@ -10,8 +10,6 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    // TODO: The entered template isnt actually saved in the database.
-
     /// <summary>
     /// This is where the user gets to create a template.
     /// The template is saved into the database.
@@ -40,13 +38,13 @@ namespace HappyTech
                 }
 
                 //create template object to hold the parameters to be input into the DB
-                Template template = new Template(templateTitle.Text, templateText.Text, templateCategorySelection.Text, successfullOrUnsuccessful);
+                Template template = new Template(templateTitle.Text, templateText1.Text, templateText2.Text, templateText3.Text, templateText4.Text, templateText5.Text, templateCategorySelection.Text, successfullOrUnsuccessful);
                 try
                 {
                     //SQL insert statement
-                    DatabaseConnection.createTemplate("INSERT INTO templates (templateTitle, templateText, templateCategory, templateSuccessful)" +
-                        " VALUES(@templateTitle, @templateText, @templateCategory, @templateSuccessful)", template.templateTitle,
-                        template.templateText, template.templateCategory, template.templateSuccessful);
+                    DatabaseConnection.createTemplate("INSERT INTO templates (templateTitle, templateText_1, templateText_2, templateText_3, templateText_4, templateText_5, templateCategory, templateSuccessful)" +
+                        " VALUES(@templateTitle, @templateText_1, @templateText_2, @templateText_3, @templateText_4, @templateText_5, @templateCategory, @templateSuccessful)", template.templateTitle,
+                        template.templateText1, template.templateText2, template.templateText3, template.templateText4, template.templateText5, template.templateCategory, template.templateSuccessful);
                     MessageBox.Show("Template saved sucessfully");
                 }
                 catch (Exception ex)

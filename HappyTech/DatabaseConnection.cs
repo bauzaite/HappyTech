@@ -37,7 +37,7 @@ namespace HappyTech
             }
             return dataSet;
         }
-        public static void createTemplate(string sqlQuery, string templateTitle, string templateText, string templateCategory, int templateSuccessful)
+        public static void createTemplate(string sqlQuery, string templateTitle, string templateText1, string templateText2, string templateText3, string templateText4, string templateText5, string templateCategory, int templateSuccessful)
         {
             SqlConnection sqlCon;
             using (sqlCon = new SqlConnection(connectionString))
@@ -46,7 +46,11 @@ namespace HappyTech
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.Parameters.AddWithValue("@templateTitle", templateTitle);
-                sqlCommand.Parameters.AddWithValue("@templateText", templateText);
+                sqlCommand.Parameters.AddWithValue("@templateText_1", templateText1);
+                sqlCommand.Parameters.AddWithValue("@templateText_2", templateText2);
+                sqlCommand.Parameters.AddWithValue("@templateText_3", templateText3);
+                sqlCommand.Parameters.AddWithValue("@templateText_4", templateText4);
+                sqlCommand.Parameters.AddWithValue("@templateText_5", templateText5);
                 sqlCommand.Parameters.AddWithValue("@templateCategory", templateCategory);
                 sqlCommand.Parameters.AddWithValue("@templateSuccessful", templateSuccessful);
 

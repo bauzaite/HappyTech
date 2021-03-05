@@ -304,10 +304,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HappyTechDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="HappyTechDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>HappyTechDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>

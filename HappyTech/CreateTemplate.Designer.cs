@@ -32,7 +32,7 @@
             this.panelCreateTemplateTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.templateCategorySelection = new System.Windows.Forms.ComboBox();
-            this.templateText = new System.Windows.Forms.TextBox();
+            this.templateText1 = new System.Windows.Forms.TextBox();
             this.radioBTNTrue = new System.Windows.Forms.RadioButton();
             this.submitTemplateBTN = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.radioBTNFalse = new System.Windows.Forms.RadioButton();
+            this.templateText2 = new System.Windows.Forms.TextBox();
+            this.templateText3 = new System.Windows.Forms.TextBox();
+            this.templateText4 = new System.Windows.Forms.TextBox();
+            this.templateText5 = new System.Windows.Forms.TextBox();
             this.panelCreateTemplateTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,13 +88,13 @@
             this.templateCategorySelection.Size = new System.Drawing.Size(121, 21);
             this.templateCategorySelection.TabIndex = 5;
             // 
-            // templateText
+            // templateText1
             // 
-            this.templateText.Location = new System.Drawing.Point(47, 289);
-            this.templateText.Multiline = true;
-            this.templateText.Name = "templateText";
-            this.templateText.Size = new System.Drawing.Size(513, 162);
-            this.templateText.TabIndex = 3;
+            this.templateText1.Location = new System.Drawing.Point(47, 299);
+            this.templateText1.Multiline = true;
+            this.templateText1.Name = "templateText1";
+            this.templateText1.Size = new System.Drawing.Size(513, 25);
+            this.templateText1.TabIndex = 3;
             // 
             // radioBTNTrue
             // 
@@ -104,7 +108,7 @@
             // 
             // submitTemplateBTN
             // 
-            this.submitTemplateBTN.Location = new System.Drawing.Point(47, 532);
+            this.submitTemplateBTN.Location = new System.Drawing.Point(47, 531);
             this.submitTemplateBTN.Name = "submitTemplateBTN";
             this.submitTemplateBTN.Size = new System.Drawing.Size(135, 23);
             this.submitTemplateBTN.TabIndex = 6;
@@ -162,12 +166,48 @@
             this.radioBTNFalse.TabStop = true;
             this.radioBTNFalse.UseVisualStyleBackColor = true;
             // 
+            // templateText2
+            // 
+            this.templateText2.Location = new System.Drawing.Point(47, 330);
+            this.templateText2.Multiline = true;
+            this.templateText2.Name = "templateText2";
+            this.templateText2.Size = new System.Drawing.Size(513, 25);
+            this.templateText2.TabIndex = 11;
+            // 
+            // templateText3
+            // 
+            this.templateText3.Location = new System.Drawing.Point(47, 361);
+            this.templateText3.Multiline = true;
+            this.templateText3.Name = "templateText3";
+            this.templateText3.Size = new System.Drawing.Size(513, 25);
+            this.templateText3.TabIndex = 12;
+            // 
+            // templateText4
+            // 
+            this.templateText4.Location = new System.Drawing.Point(47, 392);
+            this.templateText4.Multiline = true;
+            this.templateText4.Name = "templateText4";
+            this.templateText4.Size = new System.Drawing.Size(513, 25);
+            this.templateText4.TabIndex = 13;
+            // 
+            // templateText5
+            // 
+            this.templateText5.Location = new System.Drawing.Point(47, 423);
+            this.templateText5.Multiline = true;
+            this.templateText5.Name = "templateText5";
+            this.templateText5.Size = new System.Drawing.Size(513, 25);
+            this.templateText5.TabIndex = 14;
+            // 
             // CreateTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(855, 667);
+            this.Controls.Add(this.templateText5);
+            this.Controls.Add(this.templateText4);
+            this.Controls.Add(this.templateText3);
+            this.Controls.Add(this.templateText2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -175,7 +215,7 @@
             this.Controls.Add(this.submitTemplateBTN);
             this.Controls.Add(this.radioBTNFalse);
             this.Controls.Add(this.radioBTNTrue);
-            this.Controls.Add(this.templateText);
+            this.Controls.Add(this.templateText1);
             this.Controls.Add(this.templateCategorySelection);
             this.Controls.Add(this.panelCreateTemplateTitle);
             this.Controls.Add(this.templateTitle);
@@ -195,7 +235,7 @@
         private System.Windows.Forms.Panel panelCreateTemplateTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox templateCategorySelection;
-        private System.Windows.Forms.TextBox templateText;
+        private System.Windows.Forms.TextBox templateText1;
         private System.Windows.Forms.RadioButton radioBTNTrue;
         private System.Windows.Forms.Button submitTemplateBTN;
         private System.Windows.Forms.Label label2;
@@ -203,5 +243,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioBTNFalse;
+        private System.Windows.Forms.TextBox templateText2;
+        private System.Windows.Forms.TextBox templateText3;
+        private System.Windows.Forms.TextBox templateText4;
+        private System.Windows.Forms.TextBox templateText5;
     }
 }
