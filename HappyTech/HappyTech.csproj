@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,6 +72,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>applicantname.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="createFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createFeedback.Designer.cs">
+      <DependentUpon>createFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateTemplate.cs">
       <SubType>Form</SubType>
@@ -101,6 +109,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HappyTechDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HappyTechDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +147,9 @@
     <Compile Include="Template.cs" />
     <EmbeddedResource Include="chooseTemplate.resx">
       <DependentUpon>chooseTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createFeedback.resx">
+      <DependentUpon>createFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTemplate.resx">
       <DependentUpon>CreateTemplate.cs</DependentUpon>
@@ -201,6 +227,39 @@
     <None Include="HappyTechDBDataSet2.xss">
       <DependentUpon>HappyTechDBDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="HappyTechDBDataSet3.xsc">
+      <DependentUpon>HappyTechDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet3.xss">
+      <DependentUpon>HappyTechDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet4.xsc">
+      <DependentUpon>HappyTechDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet4.xss">
+      <DependentUpon>HappyTechDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet5.xsc">
+      <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet5.xss">
+      <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Border.datasource" />
     <None Include="Properties\DataSources\CreateTemplate.datasource" />
     <None Include="Properties\DataSources\DatabaseConnection.datasource" />
@@ -248,7 +307,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="HappyTechDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>HappyTechDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
