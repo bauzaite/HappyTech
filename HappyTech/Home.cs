@@ -18,7 +18,7 @@ namespace HappyTech
 
         private void Home_Load(object sender, EventArgs e)
         {
-            // This line of code loads data into the 'applicant.Applicant' table.
+            // This line of code loads data into the applicantChoice comboBox.
             this.applicantTableAdapter.Fill(this.applicant.Applicant);
             
         }
