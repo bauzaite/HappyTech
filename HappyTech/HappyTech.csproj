@@ -94,63 +94,10 @@
     <Compile Include="chooseTemplate.Designer.cs">
       <DependentUpon>chooseTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="HappyTechDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HappyTechDBDataSet10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HappyTechDBDataSet10.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet6.cs">
-      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet7.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet71.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet71.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet8.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet8.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HappyTechDBDataSet9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -222,17 +169,6 @@
     <None Include="applicantname.xss">
       <DependentUpon>applicantname.xsd</DependentUpon>
     </None>
-    <None Include="HappyTechDBDataSet1.xsc">
-      <DependentUpon>HappyTechDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet1.xss">
-      <DependentUpon>HappyTechDBDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="HappyTechDBDataSet10.xsc">
       <DependentUpon>HappyTechDBDataSet10.xsd</DependentUpon>
     </None>
@@ -243,105 +179,6 @@
     </None>
     <None Include="HappyTechDBDataSet10.xss">
       <DependentUpon>HappyTechDBDataSet10.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet2.xsc">
-      <DependentUpon>HappyTechDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet2.xss">
-      <DependentUpon>HappyTechDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet3.xsc">
-      <DependentUpon>HappyTechDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet3.xss">
-      <DependentUpon>HappyTechDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet4.xsc">
-      <DependentUpon>HappyTechDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet4.xss">
-      <DependentUpon>HappyTechDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet5.xsc">
-      <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet5.xss">
-      <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet6.xsc">
-      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet6.xss">
-      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet7.xsc">
-      <DependentUpon>HappyTechDBDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet7.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet7.xss">
-      <DependentUpon>HappyTechDBDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet71.xsc">
-      <DependentUpon>HappyTechDBDataSet71.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet71.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet71.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet71.xss">
-      <DependentUpon>HappyTechDBDataSet71.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet8.xsc">
-      <DependentUpon>HappyTechDBDataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet8.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet8.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet8.xss">
-      <DependentUpon>HappyTechDBDataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet9.xsc">
-      <DependentUpon>HappyTechDBDataSet9.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet9.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet9.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet9.xss">
-      <DependentUpon>HappyTechDBDataSet9.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\applicant.ApplicantDataTable.datasource" />
     <None Include="Properties\DataSources\applicant.ApplicantRow.datasource" />

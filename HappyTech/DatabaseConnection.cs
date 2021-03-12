@@ -84,39 +84,39 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// 
+        /// This is used to send a SQL Command to the Database
+        /// and the output of command gets returned in a string.
         /// </summary>
-        /// <param name="sqlQuery"></param>
-        /// <param name="number"></param>
-        /// <returns></returns>
+        /// <param name="sqlQuery">SQL Command sent to  the Database</param>
+        /// <param name="number">If you are expecting a number to be returned</param>
+        /// <returns>String of the SQL Command return</returns>
         public static string basicRequest(string sqlQuery, bool number)
         {
-            string name = "Error!";  // the string you want to display in the text box
+            string SQLReturn = "Error!";
             SqlConnection sqlConn;
             using (sqlConn = new SqlConnection(connectionString))
             {
-
                 //open connection
                 sqlConn.Open();
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConn);
 
                 //set the sqlCommand's properties
                 sqlCommand.CommandType = CommandType.Text;
-                //execute the command that returns only one value. In your case the email that I presume it’s a string
 
+                //execute the command that returns only one value. In your case the email that I presume it’s a string
                 if (number == true)
                 {
-                    int hi;
-                    hi = (int)sqlCommand.ExecuteScalar();
-                    name = hi.ToString();
+                    int SQLReturnedINT;
+                    SQLReturnedINT = (int)sqlCommand.ExecuteScalar();
+                    SQLReturn = SQLReturnedINT.ToString();
                 }
                 else
                 {
-                    name = (String)sqlCommand.ExecuteScalar();
+                    SQLReturn = (String)sqlCommand.ExecuteScalar();
                 }
             }
             sqlConn.Close();
-            return name;
+            return SQLReturn;
         }
     }
 }

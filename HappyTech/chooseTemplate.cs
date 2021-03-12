@@ -22,7 +22,7 @@ namespace HappyTech
         private void chooseTemplate_Load(object sender, EventArgs e)
         {
             // This line of code loads data into the 'happyTechDBDataSet10.templates' table.
-            this.templatesTableAdapter3.Fill(this.happyTechDBDataSet10.templates);
+              this.templatesTableAdapter3.Fill(this.happyTechDBDataSet10.templates);
 
             /// LOAD APPLICANT INFO
             // get applicant_info_ID by taking the applicant_ID that user selected
