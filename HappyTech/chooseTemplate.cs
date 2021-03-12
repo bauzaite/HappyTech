@@ -1,34 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech
 {
     public partial class chooseTemplate : Form
     {
+        /// <summary>
+        /// Here user is diplayed the applicants detais,
+        /// and can choose template they have save earlier 
+        /// to use to reply to their apllicant in the next form.
+        /// </summary>
         public chooseTemplate()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// WIP!!
         /// User gets displayed applicant information according to their choice.
         /// They also get displayed their templates they have saved.
         /// </summary>
         private void chooseTemplate_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'happyTechDBDataSet2.templates' table. You can move, or remove it, as needed.
-            this.templatesTableAdapter.Fill(this.happyTechDBDataSet2.templates);
-            // TODO: This line of code loads data into the 'happyTechDBDataSet1.Applicant_Information' table. You can move, or remove it, as needed.
+            // This line of code loads data into the 'happyTechDBDataSet10.templates' table.
+            this.templatesTableAdapter3.Fill(this.happyTechDBDataSet10.templates);
 
-
+            /// LOAD APPLICANT INFO
             // get applicant_info_ID by taking the applicant_ID that user selected
             string applicantID = DatabaseConnection.basicRequest("SELECT Applicant_info_ID FROM Applicant WHERE Applicant_Id = " + Home.applicantChoice.Text, true);
 
@@ -47,16 +43,8 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Test code
-        /// TODO: Delete in the end
+        /// Takes user to the 'Create Feedback' Form
         /// </summary>
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("applicant choice was " + Home.applicantChoice.Text);
-            string myString = "applicant choice was " + Home.applicantChoice.Text;
-            applicantEmail.Text = myString;
-        }
-
         private void nextStep_Click(object sender, EventArgs e)
         {
             // take user to the next step

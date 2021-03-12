@@ -33,7 +33,7 @@ namespace HappyTech
             this.panelCreateTemplateTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.applicantChoice = new System.Windows.Forms.ComboBox();
+            applicantChoice = new System.Windows.Forms.ComboBox();
             this.applicantBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.applicantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.applicant = new HappyTech.applicant();
@@ -78,14 +78,14 @@ namespace HappyTech
             // 
             // applicantChoice
             // 
-            this.applicantChoice.DataSource = this.applicantBindingSource1;
-            this.applicantChoice.DisplayMember = "Applicant_Id";
-            this.applicantChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.applicantChoice.FormattingEnabled = true;
-            this.applicantChoice.Location = new System.Drawing.Point(242, 200);
-            this.applicantChoice.Name = "applicantChoice";
-            this.applicantChoice.Size = new System.Drawing.Size(325, 21);
-            this.applicantChoice.TabIndex = 11;
+            applicantChoice.DataSource = this.applicantBindingSource1;
+            applicantChoice.DisplayMember = "Applicant_Id";
+            applicantChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            applicantChoice.FormattingEnabled = true;
+            applicantChoice.Location = new System.Drawing.Point(242, 200);
+            applicantChoice.Name = "applicantChoice";
+            applicantChoice.Size = new System.Drawing.Size(325, 21);
+            applicantChoice.TabIndex = 11;
             // 
             // applicantBindingSource1
             // 
@@ -123,7 +123,7 @@ namespace HappyTech
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reviewButton);
-            this.Controls.Add(this.applicantChoice);
+            this.Controls.Add(applicantChoice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panelCreateTemplateTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -150,6 +150,6 @@ namespace HappyTech
         private System.Windows.Forms.BindingSource applicantBindingSource1;
         private applicantTableAdapters.ApplicantTableAdapter applicantTableAdapter;
         private System.Windows.Forms.Button reviewButton;
-        public System.Windows.Forms.ComboBox applicantChoice;
+        public static System.Windows.Forms.ComboBox applicantChoice;
     }
 }

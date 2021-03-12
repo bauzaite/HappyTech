@@ -32,17 +32,10 @@ namespace HappyTech
             this.components = new System.ComponentModel.Container();
             this.panelCreateTemplateTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.applicantInformationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.happyTechDBDataSet1 = new HappyTech.HappyTechDBDataSet1();
-            this.applicant_InformationTableAdapter = new HappyTech.HappyTechDBDataSet1TableAdapters.Applicant_InformationTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.applicantEmail = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.listTemplates = new System.Windows.Forms.ListBox();
-            this.templatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.happyTechDBDataSet2 = new HappyTech.HappyTechDBDataSet2();
-            this.templatesTableAdapter = new HappyTech.HappyTechDBDataSet2TableAdapters.templatesTableAdapter();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.applicantName = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -51,11 +44,32 @@ namespace HappyTech
             this.applicantSuccessful = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.templatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            templateChoice = new System.Windows.Forms.ListBox();
+            this.templatesBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.happyTechDBDataSet9 = new HappyTech.HappyTechDBDataSet9();
+            this.templatesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.happyTechDBDataSet7 = new HappyTech.HappyTechDBDataSet7();
+            this.templatesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.templatesTableAdapter = new HappyTech.HappyTechDBDataSet7TableAdapters.templatesTableAdapter();
+            this.happyTechDBDataSet8 = new HappyTech.HappyTechDBDataSet8();
+            this.templatesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.templatesTableAdapter1 = new HappyTech.HappyTechDBDataSet8TableAdapters.templatesTableAdapter();
+            this.templatesTableAdapter2 = new HappyTech.HappyTechDBDataSet9TableAdapters.templatesTableAdapter();
+            this.happyTechDBDataSet10 = new HappyTech.HappyTechDBDataSet10();
+            this.templatesBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.templatesTableAdapter3 = new HappyTech.HappyTechDBDataSet10TableAdapters.templatesTableAdapter();
             this.panelCreateTemplateTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.applicantInformationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCreateTemplateTitle
@@ -78,20 +92,6 @@ namespace HappyTech
             this.label1.Size = new System.Drawing.Size(294, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Create feedback for applicant";
-            // 
-            // applicantInformationBindingSource
-            // 
-            this.applicantInformationBindingSource.DataMember = "Applicant_Information";
-            this.applicantInformationBindingSource.DataSource = this.happyTechDBDataSet1;
-            // 
-            // happyTechDBDataSet1
-            // 
-            this.happyTechDBDataSet1.DataSetName = "HappyTechDBDataSet1";
-            this.happyTechDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // applicant_InformationTableAdapter
-            // 
-            this.applicant_InformationTableAdapter.ClearBeforeFill = true;
             // 
             // textBox1
             // 
@@ -124,30 +124,6 @@ namespace HappyTech
             this.textBox4.Size = new System.Drawing.Size(221, 20);
             this.textBox4.TabIndex = 13;
             this.textBox4.Text = "Select Template";
-            // 
-            // listTemplates
-            // 
-            this.listTemplates.DataSource = this.templatesBindingSource;
-            this.listTemplates.DisplayMember = "templateTitle";
-            this.listTemplates.FormattingEnabled = true;
-            this.listTemplates.Location = new System.Drawing.Point(421, 161);
-            this.listTemplates.Name = "listTemplates";
-            this.listTemplates.Size = new System.Drawing.Size(221, 134);
-            this.listTemplates.TabIndex = 14;
-            // 
-            // templatesBindingSource
-            // 
-            this.templatesBindingSource.DataMember = "templates";
-            this.templatesBindingSource.DataSource = this.happyTechDBDataSet2;
-            // 
-            // happyTechDBDataSet2
-            // 
-            this.happyTechDBDataSet2.DataSetName = "HappyTechDBDataSet2";
-            this.happyTechDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // templatesTableAdapter
-            // 
-            this.templatesTableAdapter.ClearBeforeFill = true;
             // 
             // textBox3
             // 
@@ -213,12 +189,88 @@ namespace HappyTech
             this.textBox7.TabIndex = 22;
             this.textBox7.Text = "Applicant Information:";
             // 
+            // templatesBindingSource
+            // 
+            this.templatesBindingSource.DataMember = "templates";
+            // 
+            // templateChoice
+            // 
+            templateChoice.DataSource = this.templatesBindingSource5;
+            templateChoice.DisplayMember = "templateTitle";
+            templateChoice.FormattingEnabled = true;
+            templateChoice.Location = new System.Drawing.Point(421, 161);
+            templateChoice.Name = "templateChoice";
+            templateChoice.Size = new System.Drawing.Size(221, 134);
+            templateChoice.TabIndex = 23;
+            // 
+            // templatesBindingSource4
+            // 
+            this.templatesBindingSource4.DataMember = "templates";
+            this.templatesBindingSource4.DataSource = this.happyTechDBDataSet9;
+            // 
+            // happyTechDBDataSet9
+            // 
+            this.happyTechDBDataSet9.DataSetName = "HappyTechDBDataSet9";
+            this.happyTechDBDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // templatesBindingSource1
+            // 
+            this.templatesBindingSource1.DataMember = "templates";
+            this.templatesBindingSource1.DataSource = typeof(HappyTech.HappyTechDBDataSet);
+            // 
+            // happyTechDBDataSet7
+            // 
+            this.happyTechDBDataSet7.DataSetName = "HappyTechDBDataSet7";
+            this.happyTechDBDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // templatesBindingSource2
+            // 
+            this.templatesBindingSource2.DataMember = "templates";
+            this.templatesBindingSource2.DataSource = this.happyTechDBDataSet7;
+            // 
+            // templatesTableAdapter
+            // 
+            this.templatesTableAdapter.ClearBeforeFill = true;
+            // 
+            // happyTechDBDataSet8
+            // 
+            this.happyTechDBDataSet8.DataSetName = "HappyTechDBDataSet8";
+            this.happyTechDBDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // templatesBindingSource3
+            // 
+            this.templatesBindingSource3.DataMember = "templates";
+            this.templatesBindingSource3.DataSource = this.happyTechDBDataSet8;
+            // 
+            // templatesTableAdapter1
+            // 
+            this.templatesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // templatesTableAdapter2
+            // 
+            this.templatesTableAdapter2.ClearBeforeFill = true;
+            // 
+            // happyTechDBDataSet10
+            // 
+            this.happyTechDBDataSet10.DataSetName = "HappyTechDBDataSet10";
+            this.happyTechDBDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // templatesBindingSource5
+            // 
+            this.templatesBindingSource5.DataMember = "templates";
+            this.templatesBindingSource5.DataSource = this.happyTechDBDataSet10;
+            // 
+            // templatesTableAdapter3
+            // 
+            this.templatesTableAdapter3.ClearBeforeFill = true;
+            // 
             // chooseTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(templateChoice);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.applicantSuccessful);
@@ -227,7 +279,6 @@ namespace HappyTech
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.applicantName);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.listTemplates);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.applicantEmail);
@@ -240,10 +291,16 @@ namespace HappyTech
             this.Load += new System.EventHandler(this.chooseTemplate_Load);
             this.panelCreateTemplateTitle.ResumeLayout(false);
             this.panelCreateTemplateTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.applicantInformationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,17 +310,10 @@ namespace HappyTech
 
         private System.Windows.Forms.Panel panelCreateTemplateTitle;
         private System.Windows.Forms.Label label1;
-        private HappyTechDBDataSet1 happyTechDBDataSet1;
-        private System.Windows.Forms.BindingSource applicantInformationBindingSource;
-        private HappyTechDBDataSet1TableAdapters.Applicant_InformationTableAdapter applicant_InformationTableAdapter;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox applicantEmail;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ListBox listTemplates;
-        private HappyTechDBDataSet2 happyTechDBDataSet2;
-        private System.Windows.Forms.BindingSource templatesBindingSource;
-        private HappyTechDBDataSet2TableAdapters.templatesTableAdapter templatesTableAdapter;
         private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox applicantName;
         private System.Windows.Forms.TextBox textBox5;
@@ -272,5 +322,20 @@ namespace HappyTech
         private System.Windows.Forms.TextBox applicantSuccessful;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.BindingSource templatesBindingSource;
+        private System.Windows.Forms.BindingSource templatesBindingSource1;
+        private HappyTechDBDataSet7 happyTechDBDataSet7;
+        private System.Windows.Forms.BindingSource templatesBindingSource2;
+        private HappyTechDBDataSet7TableAdapters.templatesTableAdapter templatesTableAdapter;
+        private HappyTechDBDataSet8 happyTechDBDataSet8;
+        private System.Windows.Forms.BindingSource templatesBindingSource3;
+        private HappyTechDBDataSet8TableAdapters.templatesTableAdapter templatesTableAdapter1;
+        private HappyTechDBDataSet9 happyTechDBDataSet9;
+        private System.Windows.Forms.BindingSource templatesBindingSource4;
+        private HappyTechDBDataSet9TableAdapters.templatesTableAdapter templatesTableAdapter2;
+        private HappyTechDBDataSet10 happyTechDBDataSet10;
+        private System.Windows.Forms.BindingSource templatesBindingSource5;
+        private HappyTechDBDataSet10TableAdapters.templatesTableAdapter templatesTableAdapter3;
+        public static System.Windows.Forms.ListBox templateChoice;
     }
 }

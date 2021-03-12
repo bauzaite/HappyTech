@@ -101,7 +101,7 @@
             this.LoginBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBTN.Location = new System.Drawing.Point(594, 368);
             this.LoginBTN.Name = "LoginBTN";
-            this.LoginBTN.Size = new System.Drawing.Size(75, 23);
+            this.LoginBTN.Size = new System.Drawing.Size(75, 26);
             this.LoginBTN.TabIndex = 16;
             this.LoginBTN.Text = "Login";
             this.LoginBTN.UseVisualStyleBackColor = true;

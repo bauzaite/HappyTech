@@ -57,7 +57,7 @@ namespace HappyTech
             this.panelCreateTemplateTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCreateTemplateTitle.Location = new System.Drawing.Point(0, 0);
             this.panelCreateTemplateTitle.Name = "panelCreateTemplateTitle";
-            this.panelCreateTemplateTitle.Size = new System.Drawing.Size(800, 80);
+            this.panelCreateTemplateTitle.Size = new System.Drawing.Size(854, 80);
             this.panelCreateTemplateTitle.TabIndex = 4;
             // 
             // label1
@@ -83,7 +83,7 @@ namespace HappyTech
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(28, 121);
+            this.textBox2.Location = new System.Drawing.Point(27, 133);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(120, 13);
             this.textBox2.TabIndex = 11;
@@ -92,7 +92,7 @@ namespace HappyTech
             // textBox3
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(295, 121);
+            this.textBox3.Location = new System.Drawing.Point(269, 130);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(195, 13);
             this.textBox3.TabIndex = 12;
@@ -101,7 +101,7 @@ namespace HappyTech
             // textBox4
             // 
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(553, 121);
+            this.textBox4.Location = new System.Drawing.Point(269, 376);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(179, 13);
             this.textBox4.TabIndex = 13;
@@ -110,105 +110,103 @@ namespace HappyTech
             // generatedSentances
             // 
             this.generatedSentances.FormattingEnabled = true;
-            this.generatedSentances.Location = new System.Drawing.Point(311, 149);
+            this.generatedSentances.Location = new System.Drawing.Point(269, 149);
             this.generatedSentances.Name = "generatedSentances";
-            this.generatedSentances.Size = new System.Drawing.Size(179, 214);
+            this.generatedSentances.Size = new System.Drawing.Size(505, 139);
             this.generatedSentances.TabIndex = 19;
-            this.generatedSentances.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(540, 140);
+            this.email.Location = new System.Drawing.Point(269, 395);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(219, 265);
+            this.email.Size = new System.Drawing.Size(505, 129);
             this.email.TabIndex = 21;
             this.email.Text = "";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(415, 371);
+            this.button1.Location = new System.Drawing.Point(699, 294);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 23;
             this.button1.Text = "Add to email";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.addToEmail_Click);
             // 
             // emailInBacklog
             // 
-            this.emailInBacklog.Location = new System.Drawing.Point(657, 411);
+            this.emailInBacklog.Location = new System.Drawing.Point(672, 530);
             this.emailInBacklog.Name = "emailInBacklog";
             this.emailInBacklog.Size = new System.Drawing.Size(102, 23);
             this.emailInBacklog.TabIndex = 24;
             this.emailInBacklog.Text = "Save to backlog";
             this.emailInBacklog.UseVisualStyleBackColor = true;
-            this.emailInBacklog.Click += new System.EventHandler(this.saveEmail_Click);
             // 
             // applicantSuccessful
             // 
-            this.applicantSuccessful.Location = new System.Drawing.Point(28, 383);
+            this.applicantSuccessful.Location = new System.Drawing.Point(27, 395);
             this.applicantSuccessful.Name = "applicantSuccessful";
-            this.applicantSuccessful.Size = new System.Drawing.Size(245, 20);
+            this.applicantSuccessful.Size = new System.Drawing.Size(196, 20);
             this.applicantSuccessful.TabIndex = 32;
             // 
             // applicantStage
             // 
-            this.applicantStage.Location = new System.Drawing.Point(28, 312);
+            this.applicantStage.Location = new System.Drawing.Point(27, 324);
             this.applicantStage.Name = "applicantStage";
-            this.applicantStage.Size = new System.Drawing.Size(245, 20);
+            this.applicantStage.Size = new System.Drawing.Size(196, 20);
             this.applicantStage.TabIndex = 31;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(28, 357);
+            this.textBox6.Location = new System.Drawing.Point(27, 369);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(245, 20);
+            this.textBox6.Size = new System.Drawing.Size(196, 20);
             this.textBox6.TabIndex = 30;
             this.textBox6.Text = "Applicant Successful:";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(28, 286);
+            this.textBox5.Location = new System.Drawing.Point(27, 298);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(245, 20);
+            this.textBox5.Size = new System.Drawing.Size(196, 20);
             this.textBox5.TabIndex = 29;
             this.textBox5.Text = "Applicant Stage:";
             // 
             // applicantName
             // 
-            this.applicantName.Location = new System.Drawing.Point(28, 175);
+            this.applicantName.Location = new System.Drawing.Point(27, 187);
             this.applicantName.Name = "applicantName";
-            this.applicantName.Size = new System.Drawing.Size(245, 20);
+            this.applicantName.Size = new System.Drawing.Size(196, 20);
             this.applicantName.TabIndex = 28;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(28, 149);
+            this.textBox7.Location = new System.Drawing.Point(27, 161);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(245, 20);
+            this.textBox7.Size = new System.Drawing.Size(196, 20);
             this.textBox7.TabIndex = 27;
             this.textBox7.Text = "Applicant Name:";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(28, 222);
+            this.textBox8.Location = new System.Drawing.Point(27, 234);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(245, 20);
+            this.textBox8.Size = new System.Drawing.Size(196, 20);
             this.textBox8.TabIndex = 26;
             this.textBox8.Text = "Applicant Email:";
             // 
             // applicantEmail
             // 
-            this.applicantEmail.Location = new System.Drawing.Point(28, 248);
+            this.applicantEmail.Location = new System.Drawing.Point(27, 260);
             this.applicantEmail.Name = "applicantEmail";
-            this.applicantEmail.Size = new System.Drawing.Size(245, 20);
+            this.applicantEmail.Size = new System.Drawing.Size(196, 20);
             this.applicantEmail.TabIndex = 25;
             // 
             // createFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 460);
+            this.ClientSize = new System.Drawing.Size(854, 632);
             this.Controls.Add(this.applicantSuccessful);
             this.Controls.Add(this.applicantStage);
             this.Controls.Add(this.textBox6);

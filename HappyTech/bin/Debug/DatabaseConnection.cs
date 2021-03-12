@@ -58,6 +58,7 @@ namespace HappyTech
                 sqlCommand.ExecuteNonQuery();
             }
         }
+
         public static bool getCredentials(string sqlQuery)
         {
             bool passwordCheck;
@@ -82,20 +83,18 @@ namespace HappyTech
             return passwordCheck;
         }
 
-        /// WIP - VAIVA
+
         public static string basicRequest(string sqlQuery, bool number)
         {
             string name = "Error!";  // the string you want to display in the text box
             SqlConnection sqlConn;
             using (sqlConn = new SqlConnection(connectionString))
             {
-                // Testing:
-               // string sqlQuery = "SELECT Applicant_Email FROM Applicant_Information WHERE Applicant_info_id = 4";
-               // string sqlQuery = "SELECT Applicant_info_ID FROM Applicant WHERE Applicant_Id = '1'";
 
                 //open connection
                 sqlConn.Open();
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConn);
+
                 //set the sqlCommand's properties
                 sqlCommand.CommandType = CommandType.Text;
                 //execute the command that returns only one value. In your case the email that I presume it’s a string

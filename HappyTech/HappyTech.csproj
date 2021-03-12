@@ -94,15 +94,15 @@
     <Compile Include="chooseTemplate.Designer.cs">
       <DependentUpon>chooseTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="HappyTechDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HappyTechDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HappyTechDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HappyTechDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet10.xsd</DependentUpon>
     </Compile>
     <Compile Include="HappyTechDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -123,6 +123,34 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet6.cs">
+      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet71.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet71.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HappyTechDBDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HappyTechDBDataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -194,17 +222,6 @@
     <None Include="applicantname.xss">
       <DependentUpon>applicantname.xsd</DependentUpon>
     </None>
-    <None Include="HappyTechDBDataSet.xsc">
-      <DependentUpon>HappyTechDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HappyTechDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HappyTechDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HappyTechDBDataSet.xss">
-      <DependentUpon>HappyTechDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="HappyTechDBDataSet1.xsc">
       <DependentUpon>HappyTechDBDataSet1.xsd</DependentUpon>
     </None>
@@ -215,6 +232,17 @@
     </None>
     <None Include="HappyTechDBDataSet1.xss">
       <DependentUpon>HappyTechDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet10.xsc">
+      <DependentUpon>HappyTechDBDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet10.xss">
+      <DependentUpon>HappyTechDBDataSet10.xsd</DependentUpon>
     </None>
     <None Include="HappyTechDBDataSet2.xsc">
       <DependentUpon>HappyTechDBDataSet2.xsd</DependentUpon>
@@ -260,19 +288,133 @@
     <None Include="HappyTechDBDataSet5.xss">
       <DependentUpon>HappyTechDBDataSet5.xsd</DependentUpon>
     </None>
+    <None Include="HappyTechDBDataSet6.xsc">
+      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet6.xss">
+      <DependentUpon>HappyTechDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet7.xsc">
+      <DependentUpon>HappyTechDBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet7.xss">
+      <DependentUpon>HappyTechDBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet71.xsc">
+      <DependentUpon>HappyTechDBDataSet71.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet71.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet71.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet71.xss">
+      <DependentUpon>HappyTechDBDataSet71.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet8.xsc">
+      <DependentUpon>HappyTechDBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet8.xss">
+      <DependentUpon>HappyTechDBDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet9.xsc">
+      <DependentUpon>HappyTechDBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="HappyTechDBDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HappyTechDBDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HappyTechDBDataSet9.xss">
+      <DependentUpon>HappyTechDBDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\applicant.ApplicantDataTable.datasource" />
+    <None Include="Properties\DataSources\applicant.ApplicantRow.datasource" />
+    <None Include="Properties\DataSources\applicant.ApplicantRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\applicant.ApplicantRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\applicant.datasource" />
+    <None Include="Properties\DataSources\applicantname.ApplicantDataTable.datasource" />
+    <None Include="Properties\DataSources\applicantname.ApplicantRow.datasource" />
+    <None Include="Properties\DataSources\applicantname.ApplicantRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\applicantname.ApplicantRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\applicantname.datasource" />
     <None Include="Properties\DataSources\Border.datasource" />
+    <None Include="Properties\DataSources\chooseTemplate.datasource" />
+    <None Include="Properties\DataSources\createFeedback.datasource" />
     <None Include="Properties\DataSources\CreateTemplate.datasource" />
     <None Include="Properties\DataSources\DatabaseConnection.datasource" />
+    <None Include="Properties\DataSources\HappyTech.applicantnameTableAdapters.ApplicantTableAdapter.datasource" />
+    <None Include="Properties\DataSources\HappyTech.applicantnameTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.applicantnameTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.applicantTableAdapters.ApplicantTableAdapter.datasource" />
+    <None Include="Properties\DataSources\HappyTech.applicantTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.applicantTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet1TableAdapters.Applicant_InformationTableAdapter.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet2TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet2TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet2TableAdapters.templatesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet3TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet3TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet3TableAdapters.templatesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet4TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet4TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet4TableAdapters.templatesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet5TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet5TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSet5TableAdapters.templatesTableAdapter.datasource" />
     <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSetTableAdapters.employeeTableAdapter.datasource" />
     <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
     <None Include="Properties\DataSources\HappyTech.HappyTechDBDataSetTableAdapters.TableAdapterManager.datasource" />
     <None Include="Properties\DataSources\HappyTech.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\HappyTech.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\HappyTech.Properties.Settings1.datasource" />
     <None Include="Properties\DataSources\HappyTechDBDataSet.datasource" />
     <None Include="Properties\DataSources\HappyTechDBDataSet.employeeDataTable.datasource" />
     <None Include="Properties\DataSources\HappyTechDBDataSet.employeeRow.datasource" />
     <None Include="Properties\DataSources\HappyTechDBDataSet.employeeRowChangeEvent.datasource" />
     <None Include="Properties\DataSources\HappyTechDBDataSet.employeeRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet1.Applicant_InformationDataTable.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet1.Applicant_InformationRow.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet1.Applicant_InformationRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet1.Applicant_InformationRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet1.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet2.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet2.templatesDataTable.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet2.templatesRow.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet2.templatesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet2.templatesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet3.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet3.templatesDataTable.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet3.templatesRow.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet3.templatesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet3.templatesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet4.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet4.templatesDataTable.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet4.templatesRow.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet4.templatesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet4.templatesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet5.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet5.templatesDataTable.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet5.templatesRow.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet5.templatesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\HappyTechDBDataSet5.templatesRowChangeEventHandler.datasource" />
     <None Include="Properties\DataSources\Home.datasource" />
     <None Include="Properties\DataSources\Login.datasource" />
     <None Include="Properties\DataSources\Start.datasource" />
@@ -303,11 +445,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="HappyTechDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="HappyTechDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>HappyTechDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>

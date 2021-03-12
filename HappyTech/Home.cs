@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech
 {
+    // TO DO: Depending on the user logged in, show the applicants assignemt to them in the box only.
+
     /// <summary>
     /// Home page gives user the option to select a applicant
     /// to create a email for.
@@ -27,7 +22,7 @@ namespace HappyTech
             this.applicantTableAdapter.Fill(this.applicant.Applicant);
             
         }
-        
+       
         /// <summary>
         /// When user clicks on 'Review' button,
         /// the Home form is cleared and user is taken to the 'Choose Template' form.

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HappyTechDBDataSet8" targetNamespace="http://tempuri.org/HappyTechDBDataSet8.xsd" xmlns:mstns="http://tempuri.org/HappyTechDBDataSet8.xsd" xmlns="http://tempuri.org/HappyTechDBDataSet8.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbConnection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HappyTech.Properties.Settings.GlobalReference.Default.dbConnection" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="templatesTableAdapter" GeneratorDataComponentClassName="templatesTableAdapter" Name="templates" UserDataComponentName="templatesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbConnection (Settings)" DbObjectName="dbo.templates" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT templateText_1, templateText_2, templateText_3, templateText_4, templateText_5 FROM dbo.templates</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="templateText_1" DataSetColumn="templateText_1" />
+              <Mapping SourceColumn="templateText_2" DataSetColumn="templateText_2" />
+              <Mapping SourceColumn="templateText_3" DataSetColumn="templateText_3" />
+              <Mapping SourceColumn="templateText_4" DataSetColumn="templateText_4" />
+              <Mapping SourceColumn="templateText_5" DataSetColumn="templateText_5" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HappyTechDBDataSet8" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HappyTechDBDataSet8" msprop:Generator_UserDSName="HappyTechDBDataSet8">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="templates" msprop:Generator_TableClassName="templatesDataTable" msprop:Generator_TableVarName="tabletemplates" msprop:Generator_TablePropName="templates" msprop:Generator_RowDeletingName="templatesRowDeleting" msprop:Generator_RowChangingName="templatesRowChanging" msprop:Generator_RowEvHandlerName="templatesRowChangeEventHandler" msprop:Generator_RowDeletedName="templatesRowDeleted" msprop:Generator_UserTableName="templates" msprop:Generator_RowChangedName="templatesRowChanged" msprop:Generator_RowEvArgName="templatesRowChangeEvent" msprop:Generator_RowClassName="templatesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="templateText_1" msprop:Generator_ColumnVarNameInTable="columntemplateText_1" msprop:Generator_ColumnPropNameInRow="templateText_1" msprop:Generator_ColumnPropNameInTable="templateText_1Column" msprop:Generator_UserColumnName="templateText_1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="templateText_2" msprop:Generator_ColumnVarNameInTable="columntemplateText_2" msprop:Generator_ColumnPropNameInRow="templateText_2" msprop:Generator_ColumnPropNameInTable="templateText_2Column" msprop:Generator_UserColumnName="templateText_2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="templateText_3" msprop:Generator_ColumnVarNameInTable="columntemplateText_3" msprop:Generator_ColumnPropNameInRow="templateText_3" msprop:Generator_ColumnPropNameInTable="templateText_3Column" msprop:Generator_UserColumnName="templateText_3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="templateText_4" msprop:Generator_ColumnVarNameInTable="columntemplateText_4" msprop:Generator_ColumnPropNameInRow="templateText_4" msprop:Generator_ColumnPropNameInTable="templateText_4Column" msprop:Generator_UserColumnName="templateText_4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="templateText_5" msprop:Generator_ColumnVarNameInTable="columntemplateText_5" msprop:Generator_ColumnPropNameInRow="templateText_5" msprop:Generator_ColumnPropNameInTable="templateText_5Column" msprop:Generator_UserColumnName="templateText_5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
