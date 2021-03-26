@@ -59,6 +59,32 @@ namespace HappyTech
             }
         }
 
+        public static string insertData(string sqlQuery, bool query)
+        {
+            int id = 0;
+            SqlConnection sc;
+            using (sc = new SqlConnection(connectionString))
+            {
+                SqlCommand com = new SqlCommand();
+                //sc.ConnectionString = (connectionString);
+                sc.Open();
+
+                com.Connection = sc;
+                com.CommandText = (sqlQuery);
+
+                if (query == true)
+                {
+                    id = (int)com.ExecuteScalar();
+                }
+                else
+                {
+                    com.ExecuteNonQuery();
+                }
+                sc.Close();
+            }
+            return id.ToString();
+        }
+
         public static bool getCredentials(string sqlQuery)
         {
             bool passwordCheck;

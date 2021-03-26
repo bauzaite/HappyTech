@@ -24,33 +24,29 @@ namespace HappyTech
         private void submitTemplateBTN_Click(object sender, EventArgs e)
         {
             {
-                //set the value for the successful depending on if the radio button is checked
-                int successfullOrUnsuccessful = 0;
+                // make sure the tile box cannot be changed anoymore
+                templateTitle.ReadOnly = true;
 
-                if (radioBTNTrue.Checked == true)
-                {
-                    successfullOrUnsuccessful = 1;
+                // save title
+                string id = DatabaseConnection.insertData(@"INSERT INTO Template (Template_title) VALUES ('" + templateTitle.Text + "'); SELECT CAST(scope_identity() AS int)", true); // && return its ID
+                
+                // Inside of db.Text, save the users inputted sentence and save the template_ID against it
+                string ignore = DatabaseConnection.insertData(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "', (SELECT Template_ID from Template WHERE Template_ID ='" + id + "'))", false);
 
-                }
-                else if (radioBTNFalse.Checked == true)
-                {
-                    successfullOrUnsuccessful = 0;
-                }
+                // Show user their saved template
+                // Title
+                peviewTemplateTitle.Text = templateTitle.Text;
+                // Text
+                // SECOMND ISSUE - THIS IS RETURNING 3 COLUMNS HOW DO I HANDLE THAT
+                string text = DatabaseConnection.basicRequest("SELECT Text FROM Text WHERE Template_ID = " + id, false);
+                //MessageBox.Show("Template saved sucessfully: \n " + text);
 
-                //create template object to hold the parameters to be input into the DB
-                Template template = new Template(templateTitle.Text, templateText1.Text, templateText2.Text, templateText3.Text, templateText4.Text, templateText5.Text, templateCategorySelection.Text, successfullOrUnsuccessful);
-                try
-                {
-                    //SQL insert statement
-                    DatabaseConnection.createTemplate("INSERT INTO templates (templateTitle, templateText_1, templateText_2, templateText_3, templateText_4, templateText_5, templateCategory, templateSuccessful)" +
-                        " VALUES(@templateTitle, @templateText_1, @templateText_2, @templateText_3, @templateText_4, @templateText_5, @templateCategory, @templateSuccessful)", template.templateTitle,
-                        template.templateText1, template.templateText2, template.templateText3, template.templateText4, template.templateText5, template.templateCategory, template.templateSuccessful);
-                    MessageBox.Show("Template saved sucessfully");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                previewTemplateText.Items.Add(text);
+                //print the stored information into the BoxList
+                // 1 - count how many Text has been saved with the Template_ID
+                // 2 - iterate over each Text with Template_ID
+                // 3 - add to BoxList
+
             }
         }
     }
