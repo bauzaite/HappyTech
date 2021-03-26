@@ -167,5 +167,44 @@ namespace HappyTech
             sqlConn.Close();
             return SQLReturn;
         }
+
+        public static string[] basicRequestArray()
+        {
+            string[] list1 = new string[3];
+            string sqlQuery = "SELECT COUNT(Text) FROM Text WHERE Template_ID = 108";
+           // for (int i = 0; i < int.Parse(textCount); i++)
+           // {
+           //     previewTemplateText.Items.Add(text);
+                //SELECT COUNT(Text) FROM Text WHERE Template_ID = 108
+           // }
+            //string SQLReturn;
+            SqlConnection sqlConn;
+            using (sqlConn = new SqlConnection(connectionString))
+            {
+
+                //open connection
+                sqlConn.Open();
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConn);
+
+                //set the sqlCommand's properties
+                sqlCommand.CommandType = CommandType.Text;
+
+                //execute the command that returns only one value. In your case the email that I presume it’s a string
+                // SQLReturn = (String)sqlCommand.ExecuteScalar();
+
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+                
+                while (dataReader.Read())
+                {
+                    list1[0] = dataReader[0].ToString();
+                    list1[1] = dataReader[1].ToString();
+                    list1[2] = dataReader[3].ToString();
+                }
+
+            }
+            sqlConn.Close();
+            return list1;
+        }
     }
 }
