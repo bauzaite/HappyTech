@@ -100,3 +100,5 @@ C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.csproj.G
 C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.csproj.CoreCompileInputs.cache
 C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.exe
 C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.pdb
+C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.Forms.EditTemplate.resources
+C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.ManageTemplates.resources

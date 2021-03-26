@@ -13,15 +13,21 @@ namespace HappyTech
     {
         public string templateTitle;
         public string templateText;
+        public string templateOwner;
 
-        public Template(string templateTitle, string templateText)
+        public Template()
+        {
+
+        }
+        public Template(string templateTitle, string templateText, string templateOwner)
         {
             this.templateTitle = templateTitle;
             this.templateText = templateText;
+            this.templateOwner = templateOwner;
         }
         public override string ToString()
         {
-            return templateTitle + " " + templateText;
+            return templateTitle + " " + templateText + " " + templateOwner;
         }
     }
 }

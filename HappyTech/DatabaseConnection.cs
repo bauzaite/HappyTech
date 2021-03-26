@@ -37,7 +37,7 @@ namespace HappyTech
             }
             return dataSet;
         }
-        public static void createTemplate(string sqlQuery, string templateTitle, string templateText1, string templateText2, string templateText3, string templateText4, string templateText5, string templateCategory, int templateSuccessful)
+        public static void createTemplate(string sqlQuery, string sqlQuery2, string templateTitle, string templateOwner)
         {
             SqlConnection sqlCon;
             using (sqlCon = new SqlConnection(connectionString))
@@ -46,13 +46,7 @@ namespace HappyTech
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.Parameters.AddWithValue("@templateTitle", templateTitle);
-                sqlCommand.Parameters.AddWithValue("@templateText_1", templateText1);
-                sqlCommand.Parameters.AddWithValue("@templateText_2", templateText2);
-                sqlCommand.Parameters.AddWithValue("@templateText_3", templateText3);
-                sqlCommand.Parameters.AddWithValue("@templateText_4", templateText4);
-                sqlCommand.Parameters.AddWithValue("@templateText_5", templateText5);
-                sqlCommand.Parameters.AddWithValue("@templateCategory", templateCategory);
-                sqlCommand.Parameters.AddWithValue("@templateSuccessful", templateSuccessful);
+                sqlCommand.Parameters.AddWithValue("@templateOwner", templateOwner);
 
                 sqlCon.Open();
                 sqlCommand.ExecuteNonQuery();
@@ -84,7 +78,36 @@ namespace HappyTech
             }
             return id.ToString();
         }
+        public static List<Template> getTemplates(string sqlQuery)
+        {
+            List<Template> tempList = new List<Template>();
+            SqlConnection sqlCon;
+            using (sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
 
+                while (reader.Read())
+                {
+                    try
+                    {
+                        Template template = new Template
+                        {
+                            templateTitle = reader["Template_title"].ToString(),
+                            templateOwner = reader["Template_owner"].ToString()
+                        };
+                        tempList.Add(template);
+                    }
+                    catch(Exception exc) 
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                }
+                reader.Close();
+            }
+            return tempList;
+        }
         public static bool getCredentials(string sqlQuery)
         {
             bool passwordCheck;
