@@ -35,7 +35,6 @@ namespace HappyTech
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.generatedSentances = new System.Windows.Forms.CheckedListBox();
             this.email = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.emailInBacklog = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@ namespace HappyTech
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.applicantEmail = new System.Windows.Forms.TextBox();
+            this.generatedSentances = new System.Windows.Forms.ListBox();
             this.panelCreateTemplateTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,14 +106,6 @@ namespace HappyTech
             this.textBox4.Size = new System.Drawing.Size(179, 13);
             this.textBox4.TabIndex = 13;
             this.textBox4.Text = "Preview and edit email:";
-            // 
-            // generatedSentances
-            // 
-            this.generatedSentances.FormattingEnabled = true;
-            this.generatedSentances.Location = new System.Drawing.Point(269, 149);
-            this.generatedSentances.Name = "generatedSentances";
-            this.generatedSentances.Size = new System.Drawing.Size(505, 139);
-            this.generatedSentances.TabIndex = 19;
             // 
             // email
             // 
@@ -202,11 +194,21 @@ namespace HappyTech
             this.applicantEmail.Size = new System.Drawing.Size(196, 20);
             this.applicantEmail.TabIndex = 25;
             // 
+            // generatedSentances
+            // 
+            this.generatedSentances.FormattingEnabled = true;
+            this.generatedSentances.Location = new System.Drawing.Point(269, 161);
+            this.generatedSentances.Name = "generatedSentances";
+            this.generatedSentances.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.generatedSentances.Size = new System.Drawing.Size(505, 121);
+            this.generatedSentances.TabIndex = 33;
+            // 
             // createFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 632);
+            this.Controls.Add(this.generatedSentances);
             this.Controls.Add(this.applicantSuccessful);
             this.Controls.Add(this.applicantStage);
             this.Controls.Add(this.textBox6);
@@ -218,7 +220,6 @@ namespace HappyTech
             this.Controls.Add(this.emailInBacklog);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.email);
-            this.Controls.Add(this.generatedSentances);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -246,7 +247,6 @@ namespace HappyTech
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.CheckedListBox generatedSentances;
         private System.Windows.Forms.RichTextBox email;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button emailInBacklog;
@@ -258,5 +258,6 @@ namespace HappyTech
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox applicantEmail;
+        private System.Windows.Forms.ListBox generatedSentances;
     }
 }

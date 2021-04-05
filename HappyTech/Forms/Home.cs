@@ -18,9 +18,17 @@ namespace HappyTech
 
         private void Home_Load(object sender, EventArgs e)
         {
-            // This line of code loads data into the applicantChoice comboBox.
-            this.applicantTableAdapter.Fill(this.applicant.Applicant);
-            
+            int count = Int32.Parse(DatabaseConnection.basicRequest("SELECT COUNT(Applicant_Refrence) FROM Applicant_Information", true));
+            string[] applicantRefrences = new string[count];
+
+            // Fill the templates array with template_text
+            DatabaseConnection.basicRequestArray("SELECT Applicant_Refrence FROM Applicant_Information", count).CopyTo(applicantRefrences, 0);
+
+            // Fill the ListBox with all availible templates
+            for (int i = 0; i < count; i++)
+            {
+                applicantRefrenceChoices.Items.Add(applicantRefrences[i]);
+            }
         }
        
         /// <summary>

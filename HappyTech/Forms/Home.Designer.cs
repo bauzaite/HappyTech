@@ -29,20 +29,12 @@ namespace HappyTech
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelCreateTemplateTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            applicantChoice = new System.Windows.Forms.ComboBox();
-            this.applicantBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.applicantBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.applicant = new HappyTech.applicant();
-            this.applicantTableAdapter = new HappyTech.applicantTableAdapters.ApplicantTableAdapter();
             this.reviewButton = new System.Windows.Forms.Button();
+            applicantRefrenceChoices = new System.Windows.Forms.ComboBox();
             this.panelCreateTemplateTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicant)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCreateTemplateTitle
@@ -76,39 +68,9 @@ namespace HappyTech
             this.label3.TabIndex = 10;
             this.label3.Text = "Please select below an applicant to respond to:";
             // 
-            // applicantChoice
-            // 
-            applicantChoice.DataSource = this.applicantBindingSource1;
-            applicantChoice.DisplayMember = "Applicant_Id";
-            applicantChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            applicantChoice.FormattingEnabled = true;
-            applicantChoice.Location = new System.Drawing.Point(242, 200);
-            applicantChoice.Name = "applicantChoice";
-            applicantChoice.Size = new System.Drawing.Size(325, 21);
-            applicantChoice.TabIndex = 11;
-            // 
-            // applicantBindingSource1
-            // 
-            this.applicantBindingSource1.DataMember = "Applicant";
-            this.applicantBindingSource1.DataSource = this.applicantBindingSource;
-            // 
-            // applicantBindingSource
-            // 
-            this.applicantBindingSource.DataSource = this.applicant;
-            this.applicantBindingSource.Position = 0;
-            // 
-            // applicant
-            // 
-            this.applicant.DataSetName = "applicant";
-            this.applicant.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // applicantTableAdapter
-            // 
-            this.applicantTableAdapter.ClearBeforeFill = true;
-            // 
             // reviewButton
             // 
-            this.reviewButton.Location = new System.Drawing.Point(492, 239);
+            this.reviewButton.Location = new System.Drawing.Point(492, 246);
             this.reviewButton.Name = "reviewButton";
             this.reviewButton.Size = new System.Drawing.Size(75, 23);
             this.reviewButton.TabIndex = 12;
@@ -116,14 +78,22 @@ namespace HappyTech
             this.reviewButton.UseVisualStyleBackColor = true;
             this.reviewButton.Click += new System.EventHandler(this.reviewButton_Click);
             // 
+            // applicantRefrenceChoices
+            // 
+            applicantRefrenceChoices.FormattingEnabled = true;
+            applicantRefrenceChoices.Location = new System.Drawing.Point(262, 200);
+            applicantRefrenceChoices.Name = "applicantRefrenceChoices";
+            applicantRefrenceChoices.Size = new System.Drawing.Size(286, 21);
+            applicantRefrenceChoices.TabIndex = 14;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(applicantRefrenceChoices);
             this.Controls.Add(this.reviewButton);
-            this.Controls.Add(applicantChoice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panelCreateTemplateTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -132,9 +102,6 @@ namespace HappyTech
             this.Load += new System.EventHandler(this.Home_Load);
             this.panelCreateTemplateTitle.ResumeLayout(false);
             this.panelCreateTemplateTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicantBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,11 +112,7 @@ namespace HappyTech
         private System.Windows.Forms.Panel panelCreateTemplateTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.BindingSource applicantBindingSource;
-        private applicant applicant;
-        private System.Windows.Forms.BindingSource applicantBindingSource1;
-        private applicantTableAdapters.ApplicantTableAdapter applicantTableAdapter;
         private System.Windows.Forms.Button reviewButton;
-        public static System.Windows.Forms.ComboBox applicantChoice;
+        public static System.Windows.Forms.ComboBox applicantRefrenceChoices;
     }
 }

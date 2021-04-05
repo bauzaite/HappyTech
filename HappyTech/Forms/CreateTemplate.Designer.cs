@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.templateTitle = new System.Windows.Forms.TextBox();
+            templateTitle = new System.Windows.Forms.TextBox();
             this.panelCreateTemplateTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.templateText = new System.Windows.Forms.TextBox();
@@ -38,8 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.peviewTemplateTitle = new System.Windows.Forms.TextBox();
-            this.previewTemplateText = new System.Windows.Forms.ListBox();
+            peviewTemplateTitle = new System.Windows.Forms.TextBox();
+            previewTemplateText = new System.Windows.Forms.ListBox();
             this.templateBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataBase_Data = new HappyTech.DataBase_Data();
@@ -56,10 +56,10 @@
             // 
             // templateTitle
             // 
-            this.templateTitle.Location = new System.Drawing.Point(47, 211);
-            this.templateTitle.Name = "templateTitle";
-            this.templateTitle.Size = new System.Drawing.Size(225, 20);
-            this.templateTitle.TabIndex = 0;
+            templateTitle.Location = new System.Drawing.Point(47, 211);
+            templateTitle.Name = "templateTitle";
+            templateTitle.Size = new System.Drawing.Size(225, 20);
+            templateTitle.TabIndex = 0;
             // 
             // panelCreateTemplateTitle
             // 
@@ -141,18 +141,18 @@
             // 
             // peviewTemplateTitle
             // 
-            this.peviewTemplateTitle.Location = new System.Drawing.Point(47, 386);
-            this.peviewTemplateTitle.Name = "peviewTemplateTitle";
-            this.peviewTemplateTitle.Size = new System.Drawing.Size(225, 20);
-            this.peviewTemplateTitle.TabIndex = 17;
+            peviewTemplateTitle.Location = new System.Drawing.Point(47, 386);
+            peviewTemplateTitle.Name = "peviewTemplateTitle";
+            peviewTemplateTitle.Size = new System.Drawing.Size(225, 20);
+            peviewTemplateTitle.TabIndex = 17;
             // 
             // previewTemplateText
             // 
-            this.previewTemplateText.FormattingEnabled = true;
-            this.previewTemplateText.Location = new System.Drawing.Point(47, 421);
-            this.previewTemplateText.Name = "previewTemplateText";
-            this.previewTemplateText.Size = new System.Drawing.Size(466, 95);
-            this.previewTemplateText.TabIndex = 18;
+            previewTemplateText.FormattingEnabled = true;
+            previewTemplateText.Location = new System.Drawing.Point(47, 421);
+            previewTemplateText.Name = "previewTemplateText";
+            previewTemplateText.Size = new System.Drawing.Size(466, 95);
+            previewTemplateText.TabIndex = 18;
             // 
             // templateBindingSource1
             // 
@@ -189,7 +189,7 @@
             // templateBindingSource
             // 
             this.templateBindingSource.DataMember = "Template";
-            this.templateBindingSource.DataSource = typeof(HappyTech.HappyTechDBDataSet);
+//            this.templateBindingSource.DataSource = typeof(HappyTech.HappyTechDBDataSet);
             // 
             // templateTableAdapter
             // 
@@ -203,8 +203,8 @@
             this.ClientSize = new System.Drawing.Size(855, 561);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.previewTemplateText);
-            this.Controls.Add(this.peviewTemplateTitle);
+            this.Controls.Add(previewTemplateText);
+            this.Controls.Add(peviewTemplateTitle);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label4);
@@ -212,7 +212,7 @@
             this.Controls.Add(this.submitTemplateBTN);
             this.Controls.Add(this.templateText);
             this.Controls.Add(this.panelCreateTemplateTitle);
-            this.Controls.Add(this.templateTitle);
+            this.Controls.Add(templateTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateTemplate";
             this.Text = "CreateTemplate";
@@ -235,8 +235,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox peviewTemplateTitle;
-        private System.Windows.Forms.ListBox previewTemplateText;
+        public static System.Windows.Forms.TextBox peviewTemplateTitle;
+        public static System.Windows.Forms.ListBox previewTemplateText;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.BindingSource templateBindingSource;
@@ -245,6 +245,6 @@
         private System.Windows.Forms.BindingSource templateBindingSource1;
         private DataBase_DataTableAdapters.TemplateTableAdapter templateTableAdapter;
         public System.Windows.Forms.TextBox templateText;
-        public System.Windows.Forms.TextBox templateTitle;
+        public static System.Windows.Forms.TextBox templateTitle;
     }
 }

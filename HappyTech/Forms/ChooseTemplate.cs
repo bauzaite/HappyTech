@@ -21,25 +21,11 @@ namespace HappyTech
         /// </summary>
         private void chooseTemplate_Load(object sender, EventArgs e)
         {
-            // This line of code loads data into the 'happyTechDBDataSet10.templates' table.
-              this.templatesTableAdapter3.Fill(this.happyTechDBDataSet10.templates);
+            // Load Template choices
+            Helper.fillUserList("Template", "Template_title", "Template_Owner", Login.loggedInEmployee, templateChoice, false);
 
-            /// LOAD APPLICANT INFO
-            // get applicant_info_ID by taking the applicant_ID that user selected
-            string applicantID = DatabaseConnection.basicRequest("SELECT Applicant_info_ID FROM Applicant WHERE Applicant_Id = " + Home.applicantChoice.Text, true);
-
-            // Request Applicant_fName and Applicant_lName depending on the applicant_info_ID
-            applicantName.Text = DatabaseConnection.basicRequest("SELECT Applicant_fName FROM Applicant_Information WHERE Applicant_info_id = " + applicantID, false)
-                + " " + DatabaseConnection.basicRequest("SELECT Applicant_lName FROM Applicant_Information WHERE Applicant_info_id = " + applicantID, false);
-
-            // Request Applicant_Email depending on the applicant_info_ID
-            applicantEmail.Text = DatabaseConnection.basicRequest("SELECT Applicant_Email FROM Applicant_Information WHERE Applicant_info_id = " + applicantID, false);
-
-            // Request Applicant_Stage depending on the applicant_info_ID
-            applicantStage.Text = DatabaseConnection.basicRequest("SELECT Applicant_Stage FROM Applicant_Information WHERE Applicant_info_id = " + applicantID, false);
-
-            // Request Applicant_Successful depending on the applicant_info_ID
-            applicantSuccessful.Text = DatabaseConnection.basicRequest("SELECT Applicant_Successful FROM Applicant_Information WHERE Applicant_info_id = " + applicantID, false);
+            // Load Applicant Information
+            Helper.LoadApllicantInformation(applicantName, applicantEmail, applicantStage, applicantSuccessful, Home.applicantRefrenceChoices.Text.ToString());
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ namespace HappyTech
     
             // Password comparison sql
             string sqlQuery = "SELECT * FROM employee WHERE employeeUN='" + un + "' AND employeePWD='" + pwd + "'";
-            bool passCheck = DatabaseConnection.getCredentials(sqlQuery);
+            bool passCheck = DatabaseConnection.checkDataExists(sqlQuery);
 
             if (passCheck == true)
             {

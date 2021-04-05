@@ -37,47 +37,86 @@ namespace HappyTech
             }
             return dataSet;
         }
-        public static void createTemplate(string sqlQuery, string sqlQuery2, string templateTitle, string templateOwner)
+
+        // This applicant constuctor should be acessible by all forms.
+        public static Applicant applicant;
+        /// <summary>
+        /// Fills applicant constructor with the relevant applicants information.
+        /// </summary>
+        /// <param name="sqlQuery">SQL Command giving the relevant applicants identification.</param>
+        public static void loadApplicantInformation(string sqlQuery)
         {
             SqlConnection sqlCon;
             using (sqlCon = new SqlConnection(connectionString))
             {
-
-                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
-                sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.Parameters.AddWithValue("@templateTitle", templateTitle);
-                sqlCommand.Parameters.AddWithValue("@templateOwner", templateOwner);
-
                 sqlCon.Open();
-                sqlCommand.ExecuteNonQuery();
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    try
+                    {
+                        applicant = new Applicant
+                        {
+                            applicantFName = reader["Applicant_fName"].ToString(),
+                            applicantLName = reader["Applicant_lName"].ToString(),
+                            applicantEmail = reader["Applicant_Email"].ToString(),
+                            applicantStage = reader["Applicant_Stage"].ToString(),
+                            applicantSuccessful = reader["Applicant_Successful"].ToString()
+                        };
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                    }
+                }
+                reader.Close();
             }
         }
 
-        public static string insertData(string sqlQuery, bool query)
+        /// <summary>
+        /// Execute an insert data SQL command and expect a return.
+        /// </summary>
+        /// <param name="sqlQuery">Requests for specific data in column.</param>
+        /// <returns>Requested data from the SQL Command</returns>
+        public static string insertDataScalar(string sqlQuery)
         {
             int id = 0;
             SqlConnection sc;
             using (sc = new SqlConnection(connectionString))
             {
                 SqlCommand com = new SqlCommand();
-                //sc.ConnectionString = (connectionString);
                 sc.Open();
 
                 com.Connection = sc;
                 com.CommandText = (sqlQuery);
-
-                if (query == true)
-                {
-                    id = (int)com.ExecuteScalar();
-                }
-                else
-                {
-                    com.ExecuteNonQuery();
-                }
+                id = (int)com.ExecuteScalar();
                 sc.Close();
             }
             return id.ToString();
         }
+
+        /// <summary>
+        /// Execute an insert data SQL command and dont expect a return.
+        /// </summary>
+        /// <param name="sqlQuery">Requests for specific data in column.</param>
+        public static void insertDataNonQuery(string sqlQuery)
+        {
+            SqlConnection sc;
+            using (sc = new SqlConnection(connectionString))
+            {
+                SqlCommand com = new SqlCommand();
+                sc.Open();
+
+                com.Connection = sc;
+                com.CommandText = (sqlQuery);
+                com.ExecuteNonQuery();
+                sc.Close();
+            }
+        }
+
+
         public static List<Template> getTemplates(string sqlQuery)
         {
             List<Template> tempList = new List<Template>();
@@ -108,9 +147,15 @@ namespace HappyTech
             }
             return tempList;
         }
-        public static bool getCredentials(string sqlQuery)
+
+        /// <summary>
+        /// Using sent SQL Command, check data exists in the DB.
+        /// </summary>
+        /// <param name="sqlQuery">Requests for specific data in column.</param>
+        /// <returns></returns>
+        public static bool checkDataExists(string sqlQuery)
         {
-            bool passwordCheck;
+            bool check;
             SqlConnection sqlCon;
             using (sqlCon = new SqlConnection(connectionString))
             {
@@ -120,16 +165,16 @@ namespace HappyTech
 
                 if (reader.HasRows)
                 {
-                    passwordCheck = true;
+                    check = true;
                     reader.Close();
                 }
                 else
                 {
-                    passwordCheck = false;
+                    check = false;
                     reader.Close();
                 }
             }
-            return passwordCheck;
+            return check;
         }
 
         /// <summary>
@@ -168,43 +213,36 @@ namespace HappyTech
             return SQLReturn;
         }
 
-        public static string[] basicRequestArray()
+        /// <summary>
+        /// This is the same as basicRequest() but an array of requested data
+        /// is returned instead.
+        /// </summary>
+        /// <param name="sqlQuery">SQL Command sent to  the Database</param>
+        /// <param name="count">How big is the array</param>
+        /// <returns>Array of requested data</returns>
+        public static string[] basicRequestArray(string sqlQuery, int count)
         {
-            string[] list1 = new string[3];
-            string sqlQuery = "SELECT COUNT(Text) FROM Text WHERE Template_ID = 108";
-           // for (int i = 0; i < int.Parse(textCount); i++)
-           // {
-           //     previewTemplateText.Items.Add(text);
-                //SELECT COUNT(Text) FROM Text WHERE Template_ID = 108
-           // }
-            //string SQLReturn;
+            string[] requestedArray = new string[count];
+            //sqlQuery = "SELECT Text FROM Text WHERE Template_ID = 158";
             SqlConnection sqlConn;
             using (sqlConn = new SqlConnection(connectionString))
             {
-
                 //open connection
                 sqlConn.Open();
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConn);
-
-                //set the sqlCommand's properties
                 sqlCommand.CommandType = CommandType.Text;
-
-                //execute the command that returns only one value. In your case the email that I presume it’s a string
-                // SQLReturn = (String)sqlCommand.ExecuteScalar();
-
                 SqlDataReader dataReader = sqlCommand.ExecuteReader();
 
-                
-                while (dataReader.Read())
-                {
-                    list1[0] = dataReader[0].ToString();
-                    list1[1] = dataReader[1].ToString();
-                    list1[2] = dataReader[3].ToString();
-                }
 
+                // iterate over each row and save it in the array
+                for (int i = 0; i < count; i++)
+                {
+                    dataReader.Read();
+                    requestedArray[i] = dataReader[0].ToString();
+                }
             }
             sqlConn.Close();
-            return list1;
+            return requestedArray;
         }
     }
 }

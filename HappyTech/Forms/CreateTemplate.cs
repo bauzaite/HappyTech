@@ -22,62 +22,51 @@ namespace HappyTech
         }
 
         int saveCount = 0;
-        string templateID;
+        public static string templateID;
+
+        /// <summary>
+        /// The 'Save' button saves new templates title and assigned text(s) depending on whether the templates title is unique.
+        /// It then shows user what they have saved in the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void submitTemplateBTN_Click(object sender, EventArgs e)
         {
-            // if clicked save 1 time
-            // 
             saveCount++;
-            if (saveCount == 1)
+            bool titleExists = DatabaseConnection.checkDataExists("SELECT Template_title FROM Template WHERE Template_title = '" + templateTitle.Text + "'");
+
+             // If you are creating a new template AND the title is unique.
+            if (saveCount == 1 && titleExists == false)
             {
-                // if you are saving template for first time.
-                // save template_ID of the new template
-                templateID = DatabaseConnection.insertData(@"INSERT INTO Template (Template_title, Template_owner) VALUES ('" + templateTitle.Text + "','" + Login.loggedInEmployee + "' ); SELECT CAST(scope_identity() AS int)", true);
-                // save the new text
-                string ignore = DatabaseConnection.insertData(@"INSERT INTO Template (Template_text, Template_owner) VALUES ('" + templateText.Text + "','" + Login.loggedInEmployee + "' ); SELECT CAST(scope_identity() AS int)", true);
-                // lock title so user cannot edit it
-                templateTitle.ReadOnly = true;
+                // Create a new template by saving its title and creators username. Save the new assigned Template_ID by the database.
+                templateID = DatabaseConnection.insertDataScalar(@"INSERT INTO Template (Template_title, Template_owner) VALUES ('" + templateTitle.Text + "','" + Login.loggedInEmployee + "' ); SELECT CAST(scope_identity() AS int)");
+
+                // Save the new saved Text and assign the template_ID to it.
+                DatabaseConnection.insertDataNonQuery(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "', (SELECT Template_ID from Template WHERE Template_ID ='" + templateID + "'))");
+            }
+            // If you are creating a new template AND the title isnt unique.
+            else if (saveCount == 1 && titleExists == true)
+            {
+                MessageBox.Show("Title Name already exists. Please enter a different title.");
+            }
+            // If you have already have started creating a new template AND the template exists.
+            else if (saveCount >= 2 && titleExists == true)
+            {
+                // Don't allow user to edit the title.
+                templateTitle.ReadOnly = true; // Makes program more clear since the user can only keep saving sentances to the same template
+
+                // Save the new saved Text and assign the template_ID to it.
+                DatabaseConnection.insertDataNonQuery(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "', (SELECT Template_ID from Template WHERE Template_ID ='" + templateID + "'))");
             }
             else
             {
-                // this means you saved template already
-                // then u have to use the existing templateID
-                string ignore = DatabaseConnection.insertData(@"INSERT INTO Template (Template_text, Template_owner) VALUES ('" + templateText.Text + "','" + Login.loggedInEmployee + "' ); SELECT CAST(scope_identity() AS int)", true);
-                // save title
-                string id = DatabaseConnection.insertData(@"INSERT INTO Template (Template_title, Template_owner) VALUES ('" + templateTitle.Text + "','" + Login.loggedInEmployee + "' ); SELECT CAST(scope_identity() AS int)", true); // && return its ID
-                //DatabaseConnection.insertData(@"INSERT INTO Template (Template_owner) VALUES ('" + Login.loggedInEmployee +"'", true);
-                // Inside of db.Text, save the users inputted sentence and save the template_ID against it
-                //string ignore = DatabaseConnection.insertData(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "', (SELECT Template_ID from Template WHERE Template_ID ='" + id + "'))", false);
+                MessageBox.Show("Error");
             }
 
+            // Fill preview ListBox
             peviewTemplateTitle.Text = templateTitle.Text;
-            string[] list1 = new string[3];
-            list1 = DatabaseConnection.basicRequestArray();
-            previewTemplateText.Items.Add(list1[0]);
-            previewTemplateText.Items.Add(list1[1]);
-            previewTemplateText.Items.Add(list1[2]);
-            // SECOMND ISSUE - THIS IS RETURNING 3 COLUMNS HOW DO I HANDLE THAT
-            // string textCount = DatabaseConnection.basicRequest("SELECT COUNT(Text) FROM Text WHERE Template_ID = " + templateID, true);
-            // for (int i = 0; i < int.Parse(textCount); i++)
-            // {
-            //     previewTemplateText.Items.Add(text);
-            //SELECT COUNT(Text) FROM Text WHERE Template_ID = 108
-            // }
-
-
-            // string text = DatabaseConnection.basicRequest("SELECT Text FROM Text WHERE Template_ID = " + templateID, false);
-            //MessageBox.Show("Template saved sucessfully: \n " + text);
-
-            //previewTemplateText.Items.Add(text);
-            //print the stored information into the BoxList
-            // 1 - count how many Text has been saved with the Template_ID
-            // 2 - iterate over each Text with Template_ID
-            // 3 - add to BoxList
-        }
-
-        private void fillText()
-        {
-
+            peviewTemplateTitle.ReadOnly = true; // Makes program more UI friendly since it is more clear the user can only keep saving sentances to the same template
+            Helper.fillUserList("Text", "Text", "Template_ID", templateID, previewTemplateText, true);
         }
     }
 }
