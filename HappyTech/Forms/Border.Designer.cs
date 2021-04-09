@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Border));
-            panelMain = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panelLeftNav = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,19 +37,19 @@
             this.showCreateTemplate = new System.Windows.Forms.Button();
             this.showHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            panelMain.SuspendLayout();
+            this.panelMain.SuspendLayout();
             this.panelLeftNav.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
             // 
-            panelMain.BackColor = System.Drawing.Color.White;
-            panelMain.Controls.Add(this.panelTitle);
-            panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelMain.Location = new System.Drawing.Point(220, 0);
-            panelMain.Name = "panelMain";
-            panelMain.Size = new System.Drawing.Size(855, 667);
-            panelMain.TabIndex = 9;
+            this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Controls.Add(this.panelTitle);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(220, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(855, 667);
+            this.panelMain.TabIndex = 9;
             // 
             // panelTitle
             // 
@@ -86,7 +86,7 @@
             this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(220, 60);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Test";
+            this.button3.Text = "Backlog";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -157,11 +157,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 667);
-            this.Controls.Add(panelMain);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelLeftNav);
             this.Name = "Border";
             this.Text = "Main";
-            panelMain.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
             this.panelLeftNav.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -175,6 +175,6 @@
         private System.Windows.Forms.Button showManageTemplates;
         private System.Windows.Forms.Button showCreateTemplate;
         private System.Windows.Forms.Button showHome;
-        public static System.Windows.Forms.Panel panelMain;
+        public System.Windows.Forms.Panel panelMain;
     }
 }

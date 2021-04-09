@@ -133,6 +133,7 @@ namespace HappyTech
             this.emailInBacklog.TabIndex = 24;
             this.emailInBacklog.Text = "Save to backlog";
             this.emailInBacklog.UseVisualStyleBackColor = true;
+            this.emailInBacklog.Click += new System.EventHandler(this.emailInBacklog_Click);
             // 
             // applicantSuccessful
             // 

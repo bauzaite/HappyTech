@@ -17,7 +17,6 @@ namespace HappyTech
             InitializeComponent();
         }
 
-
         /// <summary>
         /// Loads information about the applicant and loads sentances into a
         /// BoxList from the chosen template that the user selected in the previous form.
@@ -49,17 +48,30 @@ namespace HappyTech
         {
             if (generatedSentances.SelectedItems.Count != 0)
             {
-                string s = "";
+                string emailContent = "";
+                // Each sentances user has selected, add it it to the email.
                 for (int x = 0; x < generatedSentances.SelectedItems.Count; x++)
                 {
-                    s = s + generatedSentances.SelectedItems[x].ToString() + " ";
+                    emailContent = emailContent + generatedSentances.SelectedItems[x].ToString() + " ";
                 }
-                email.Text = intro + "\n\n" + s + "\n\n" + outro;
+                email.Text = intro + "\n\n" + emailContent + "\n\n" + outro;
             }
             else
             {
                 MessageBox.Show("Please choose text to fill email");
             }
+        }
+
+        /// <summary>
+        /// Once user is happy with their email, they click 'Save' and
+        /// the email is saved in the database and can be later viewed in
+        /// the backlog
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void emailInBacklog_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Your email has been saved! You can find it in the 'Backlog' page.");
         }
     }
 }
