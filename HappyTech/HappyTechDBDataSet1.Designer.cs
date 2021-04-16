@@ -291,6 +291,8 @@ namespace HappyTech {
             
             private global::System.Data.DataColumn columnApplicant_Successful;
             
+            private global::System.Data.DataColumn columnApplicant_Refrence;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Applicant_InformationDataTable() {
@@ -374,6 +376,14 @@ namespace HappyTech {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Applicant_RefrenceColumn {
+                get {
+                    return this.columnApplicant_Refrence;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace HappyTech {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Applicant_InformationRow AddApplicant_InformationRow(int Applicant_info_id, string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful) {
+            public Applicant_InformationRow AddApplicant_InformationRow(int Applicant_info_id, string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful, int Applicant_Refrence) {
                 Applicant_InformationRow rowApplicant_InformationRow = ((Applicant_InformationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Applicant_info_id,
@@ -417,7 +427,8 @@ namespace HappyTech {
                         Applicant_fName,
                         Applicant_lName,
                         Applicant_Stage,
-                        Applicant_Successful};
+                        Applicant_Successful,
+                        Applicant_Refrence};
                 rowApplicant_InformationRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowApplicant_InformationRow);
                 return rowApplicant_InformationRow;
@@ -453,6 +464,7 @@ namespace HappyTech {
                 this.columnApplicant_lName = base.Columns["Applicant_lName"];
                 this.columnApplicant_Stage = base.Columns["Applicant_Stage"];
                 this.columnApplicant_Successful = base.Columns["Applicant_Successful"];
+                this.columnApplicant_Refrence = base.Columns["Applicant_Refrence"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace HappyTech {
                 base.Columns.Add(this.columnApplicant_Stage);
                 this.columnApplicant_Successful = new global::System.Data.DataColumn("Applicant_Successful", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApplicant_Successful);
+                this.columnApplicant_Refrence = new global::System.Data.DataColumn("Applicant_Refrence", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApplicant_Refrence);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnApplicant_info_id}, true));
                 this.columnApplicant_info_id.AllowDBNull = false;
@@ -717,6 +731,23 @@ namespace HappyTech {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Applicant_Refrence {
+                get {
+                    try {
+                        return ((int)(this[this.tableApplicant_Information.Applicant_RefrenceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Applicant_Refrence\' in table \'Applicant_Information\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableApplicant_Information.Applicant_RefrenceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsApplicant_EmailNull() {
                 return this.IsNull(this.tableApplicant_Information.Applicant_EmailColumn);
             }
@@ -773,6 +804,18 @@ namespace HappyTech {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetApplicant_SuccessfulNull() {
                 this[this.tableApplicant_Information.Applicant_SuccessfulColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsApplicant_RefrenceNull() {
+                return this.IsNull(this.tableApplicant_Information.Applicant_RefrenceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetApplicant_RefrenceNull() {
+                this[this.tableApplicant_Information.Applicant_RefrenceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -941,10 +984,11 @@ namespace HappyTech.HappyTechDBDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Applicant_lName", "Applicant_lName");
             tableMapping.ColumnMappings.Add("Applicant_Stage", "Applicant_Stage");
             tableMapping.ColumnMappings.Add("Applicant_Successful", "Applicant_Successful");
+            tableMapping.ColumnMappings.Add("Applicant_Refrence", "Applicant_Refrence");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Applicant_Information] WHERE (([Applicant_info_id] = @Original_Applicant_info_id) AND ((@IsNull_Applicant_Email = 1 AND [Applicant_Email] IS NULL) OR ([Applicant_Email] = @Original_Applicant_Email)) AND ((@IsNull_Applicant_fName = 1 AND [Applicant_fName] IS NULL) OR ([Applicant_fName] = @Original_Applicant_fName)) AND ((@IsNull_Applicant_lName = 1 AND [Applicant_lName] IS NULL) OR ([Applicant_lName] = @Original_Applicant_lName)) AND ((@IsNull_Applicant_Stage = 1 AND [Applicant_Stage] IS NULL) OR ([Applicant_Stage] = @Original_Applicant_Stage)) AND ((@IsNull_Applicant_Successful = 1 AND [Applicant_Successful] IS NULL) OR ([Applicant_Successful] = @Original_Applicant_Successful)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Applicant_Information] WHERE (([Applicant_info_id] = @Original_Applicant_info_id) AND ((@IsNull_Applicant_Email = 1 AND [Applicant_Email] IS NULL) OR ([Applicant_Email] = @Original_Applicant_Email)) AND ((@IsNull_Applicant_fName = 1 AND [Applicant_fName] IS NULL) OR ([Applicant_fName] = @Original_Applicant_fName)) AND ((@IsNull_Applicant_lName = 1 AND [Applicant_lName] IS NULL) OR ([Applicant_lName] = @Original_Applicant_lName)) AND ((@IsNull_Applicant_Stage = 1 AND [Applicant_Stage] IS NULL) OR ([Applicant_Stage] = @Original_Applicant_Stage)) AND ((@IsNull_Applicant_Successful = 1 AND [Applicant_Successful] IS NULL) OR ([Applicant_Successful] = @Original_Applicant_Successful)) AND ((@IsNull_Applicant_Refrence = 1 AND [Applicant_Refrence] IS NULL) OR ([Applicant_Refrence] = @Original_Applicant_Refrence)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_info_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_info_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -957,10 +1001,12 @@ namespace HappyTech.HappyTechDBDataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Stage", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Stage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_Successful", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Successful", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Successful", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Successful", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_Refrence", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Refrence", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Refrence", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Refrence", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Applicant_Information] ([Applicant_info_id], [Applicant_Email], [Applicant_fName], [Applicant_lName], [Applicant_Stage], [Applicant_Successful]) VALUES (@Applicant_info_id, @Applicant_Email, @Applicant_fName, @Applicant_lName, @Applicant_Stage, @Applicant_Successful);
-SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Applicant_Stage, Applicant_Successful FROM Applicant_Information WHERE (Applicant_info_id = @Applicant_info_id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Applicant_Information] ([Applicant_info_id], [Applicant_Email], [Applicant_fName], [Applicant_lName], [Applicant_Stage], [Applicant_Successful], [Applicant_Refrence]) VALUES (@Applicant_info_id, @Applicant_Email, @Applicant_fName, @Applicant_lName, @Applicant_Stage, @Applicant_Successful, @Applicant_Refrence);
+SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Applicant_Stage, Applicant_Successful, Applicant_Refrence FROM Applicant_Information WHERE (Applicant_info_id = @Applicant_info_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_info_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_info_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -968,10 +1014,11 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_lName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_lName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Stage", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Stage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Successful", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Successful", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Refrence", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Refrence", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Applicant_Information] SET [Applicant_info_id] = @Applicant_info_id, [Applicant_Email] = @Applicant_Email, [Applicant_fName] = @Applicant_fName, [Applicant_lName] = @Applicant_lName, [Applicant_Stage] = @Applicant_Stage, [Applicant_Successful] = @Applicant_Successful WHERE (([Applicant_info_id] = @Original_Applicant_info_id) AND ((@IsNull_Applicant_Email = 1 AND [Applicant_Email] IS NULL) OR ([Applicant_Email] = @Original_Applicant_Email)) AND ((@IsNull_Applicant_fName = 1 AND [Applicant_fName] IS NULL) OR ([Applicant_fName] = @Original_Applicant_fName)) AND ((@IsNull_Applicant_lName = 1 AND [Applicant_lName] IS NULL) OR ([Applicant_lName] = @Original_Applicant_lName)) AND ((@IsNull_Applicant_Stage = 1 AND [Applicant_Stage] IS NULL) OR ([Applicant_Stage] = @Original_Applicant_Stage)) AND ((@IsNull_Applicant_Successful = 1 AND [Applicant_Successful] IS NULL) OR ([Applicant_Successful] = @Original_Applicant_Successful)));
-SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Applicant_Stage, Applicant_Successful FROM Applicant_Information WHERE (Applicant_info_id = @Applicant_info_id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Applicant_Information] SET [Applicant_info_id] = @Applicant_info_id, [Applicant_Email] = @Applicant_Email, [Applicant_fName] = @Applicant_fName, [Applicant_lName] = @Applicant_lName, [Applicant_Stage] = @Applicant_Stage, [Applicant_Successful] = @Applicant_Successful, [Applicant_Refrence] = @Applicant_Refrence WHERE (([Applicant_info_id] = @Original_Applicant_info_id) AND ((@IsNull_Applicant_Email = 1 AND [Applicant_Email] IS NULL) OR ([Applicant_Email] = @Original_Applicant_Email)) AND ((@IsNull_Applicant_fName = 1 AND [Applicant_fName] IS NULL) OR ([Applicant_fName] = @Original_Applicant_fName)) AND ((@IsNull_Applicant_lName = 1 AND [Applicant_lName] IS NULL) OR ([Applicant_lName] = @Original_Applicant_lName)) AND ((@IsNull_Applicant_Stage = 1 AND [Applicant_Stage] IS NULL) OR ([Applicant_Stage] = @Original_Applicant_Stage)) AND ((@IsNull_Applicant_Successful = 1 AND [Applicant_Successful] IS NULL) OR ([Applicant_Successful] = @Original_Applicant_Successful)) AND ((@IsNull_Applicant_Refrence = 1 AND [Applicant_Refrence] IS NULL) OR ([Applicant_Refrence] = @Original_Applicant_Refrence)));
+SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Applicant_Stage, Applicant_Successful, Applicant_Refrence FROM Applicant_Information WHERE (Applicant_info_id = @Applicant_info_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_info_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_info_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -979,6 +1026,7 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_lName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_lName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Stage", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Stage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Successful", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Successful", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Applicant_Refrence", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Refrence", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_info_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_info_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -990,6 +1038,8 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Stage", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Stage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_Successful", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Successful", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Successful", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Successful", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Applicant_Refrence", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Refrence", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Applicant_Refrence", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Applicant_Refrence", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1006,7 +1056,8 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Appl" +
-                "icant_Stage, Applicant_Successful FROM dbo.Applicant_Information";
+                "icant_Stage, Applicant_Successful, Applicant_Refrence FROM dbo.Applicant_Informa" +
+                "tion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1067,7 +1118,7 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Applicant_info_id, string Original_Applicant_Email, string Original_Applicant_fName, string Original_Applicant_lName, string Original_Applicant_Stage, string Original_Applicant_Successful) {
+        public virtual int Delete(int Original_Applicant_info_id, string Original_Applicant_Email, string Original_Applicant_fName, string Original_Applicant_lName, string Original_Applicant_Stage, string Original_Applicant_Successful, global::System.Nullable<int> Original_Applicant_Refrence) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Applicant_info_id));
             if ((Original_Applicant_Email == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1109,6 +1160,14 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Applicant_Successful));
             }
+            if ((Original_Applicant_Refrence.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Applicant_Refrence.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1129,7 +1188,7 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Applicant_info_id, string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful) {
+        public virtual int Insert(int Applicant_info_id, string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful, global::System.Nullable<int> Applicant_Refrence) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Applicant_info_id));
             if ((Applicant_Email == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1161,6 +1220,12 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Applicant_Successful));
             }
+            if ((Applicant_Refrence.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Applicant_Refrence.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1181,7 +1246,7 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Applicant_info_id, string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful, int Original_Applicant_info_id, string Original_Applicant_Email, string Original_Applicant_fName, string Original_Applicant_lName, string Original_Applicant_Stage, string Original_Applicant_Successful) {
+        public virtual int Update(int Applicant_info_id, string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful, global::System.Nullable<int> Applicant_Refrence, int Original_Applicant_info_id, string Original_Applicant_Email, string Original_Applicant_fName, string Original_Applicant_lName, string Original_Applicant_Stage, string Original_Applicant_Successful, global::System.Nullable<int> Original_Applicant_Refrence) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Applicant_info_id));
             if ((Applicant_Email == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1213,46 +1278,60 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Applicant_Successful));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Applicant_info_id));
-            if ((Original_Applicant_Email == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Applicant_Refrence.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Applicant_Refrence.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Applicant_Email));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Applicant_info_id));
+            if ((Original_Applicant_Email == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Applicant_Email));
             }
             if ((Original_Applicant_fName == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Applicant_fName));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Applicant_fName));
             }
             if ((Original_Applicant_lName == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Applicant_lName));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Applicant_lName));
             }
             if ((Original_Applicant_Stage == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Applicant_Stage));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Applicant_Stage));
             }
             if ((Original_Applicant_Successful == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Applicant_Successful));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Applicant_Successful));
+            }
+            if ((Original_Applicant_Refrence.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Applicant_Refrence.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1274,8 +1353,8 @@ SELECT Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, App
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful, int Original_Applicant_info_id, string Original_Applicant_Email, string Original_Applicant_fName, string Original_Applicant_lName, string Original_Applicant_Stage, string Original_Applicant_Successful) {
-            return this.Update(Original_Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Applicant_Stage, Applicant_Successful, Original_Applicant_info_id, Original_Applicant_Email, Original_Applicant_fName, Original_Applicant_lName, Original_Applicant_Stage, Original_Applicant_Successful);
+        public virtual int Update(string Applicant_Email, string Applicant_fName, string Applicant_lName, string Applicant_Stage, string Applicant_Successful, global::System.Nullable<int> Applicant_Refrence, int Original_Applicant_info_id, string Original_Applicant_Email, string Original_Applicant_fName, string Original_Applicant_lName, string Original_Applicant_Stage, string Original_Applicant_Successful, global::System.Nullable<int> Original_Applicant_Refrence) {
+            return this.Update(Original_Applicant_info_id, Applicant_Email, Applicant_fName, Applicant_lName, Applicant_Stage, Applicant_Successful, Applicant_Refrence, Original_Applicant_info_id, Original_Applicant_Email, Original_Applicant_fName, Original_Applicant_lName, Original_Applicant_Stage, Original_Applicant_Successful, Original_Applicant_Refrence);
         }
     }
     

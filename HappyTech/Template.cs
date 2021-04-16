@@ -12,28 +12,22 @@ namespace HappyTech
     class Template
     {
         public string templateTitle;
-        public string templateText1;
-        public string templateText2;
-        public string templateText3;
-        public string templateText4;
-        public string templateText5;
-        public string templateCategory;
-        public int templateSuccessful;
+        public string templateText;
+        public string templateOwner;
 
-        public Template(string templateTitle, string templateText1, string templateText2, string templateText3, string templateText4, string templateText5, string templateCategory, int templateSuccessful)
+        public Template()
+        {
+
+        }
+        public Template(string templateTitle, string templateText, string templateOwner)
         {
             this.templateTitle = templateTitle;
-            this.templateText1 = templateText1;
-            this.templateText2 = templateText2;
-            this.templateText3 = templateText3;
-            this.templateText4 = templateText4;
-            this.templateText5 = templateText5;
-            this.templateCategory = templateCategory;
-            this.templateSuccessful = templateSuccessful;
+            this.templateText = templateText;
+            this.templateOwner = templateOwner;
         }
         public override string ToString()
         {
-            return templateTitle + " " + templateCategory + " " + templateText1 + " " + templateText2 + " " + templateText3 + " " + templateText4 + " " + templateText5 + " " + templateSuccessful;
+            return templateTitle + " " + templateText + " " + templateOwner;
         }
     }
 }
