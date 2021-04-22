@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Border));
-            this.panelMain = new System.Windows.Forms.Panel();
+            panelMain = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panelLeftNav = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.showManageTemplates = new System.Windows.Forms.Button();
+            this.showEditTemplate = new System.Windows.Forms.Button();
             this.showCreateTemplate = new System.Windows.Forms.Button();
             this.showHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelMain.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            panelMain.SuspendLayout();
             this.panelLeftNav.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Controls.Add(this.panelTitle);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(220, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(855, 667);
-            this.panelMain.TabIndex = 9;
+            panelMain.BackColor = System.Drawing.Color.White;
+            panelMain.Controls.Add(this.panelTitle);
+            panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelMain.Location = new System.Drawing.Point(220, 0);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new System.Drawing.Size(855, 667);
+            panelMain.TabIndex = 9;
             // 
             // panelTitle
             // 
@@ -63,8 +63,8 @@
             // panelLeftNav
             // 
             this.panelLeftNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
-            this.panelLeftNav.Controls.Add(this.button3);
-            this.panelLeftNav.Controls.Add(this.showManageTemplates);
+            this.panelLeftNav.Controls.Add(this.button1);
+            this.panelLeftNav.Controls.Add(this.showEditTemplate);
             this.panelLeftNav.Controls.Add(this.showCreateTemplate);
             this.panelLeftNav.Controls.Add(this.showHome);
             this.panelLeftNav.Controls.Add(this.panelLogo);
@@ -74,38 +74,22 @@
             this.panelLeftNav.Size = new System.Drawing.Size(220, 667);
             this.panelLeftNav.TabIndex = 8;
             // 
-            // button3
+            // showEditTemplate
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Location = new System.Drawing.Point(0, 260);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(220, 60);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Backlog";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // showManageTemplates
-            // 
-            this.showManageTemplates.Dock = System.Windows.Forms.DockStyle.Top;
-            this.showManageTemplates.FlatAppearance.BorderSize = 0;
-            this.showManageTemplates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showManageTemplates.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showManageTemplates.ForeColor = System.Drawing.Color.Gainsboro;
-            this.showManageTemplates.Location = new System.Drawing.Point(0, 200);
-            this.showManageTemplates.Name = "showManageTemplates";
-            this.showManageTemplates.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.showManageTemplates.Size = new System.Drawing.Size(220, 60);
-            this.showManageTemplates.TabIndex = 7;
-            this.showManageTemplates.Text = "Manage Templates";
-            this.showManageTemplates.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.showManageTemplates.UseVisualStyleBackColor = true;
-            this.showManageTemplates.Click += new System.EventHandler(this.showManageTemplates_Click);
+            this.showEditTemplate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.showEditTemplate.FlatAppearance.BorderSize = 0;
+            this.showEditTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showEditTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showEditTemplate.ForeColor = System.Drawing.Color.Gainsboro;
+            this.showEditTemplate.Location = new System.Drawing.Point(0, 200);
+            this.showEditTemplate.Name = "showEditTemplate";
+            this.showEditTemplate.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.showEditTemplate.Size = new System.Drawing.Size(220, 60);
+            this.showEditTemplate.TabIndex = 9;
+            this.showEditTemplate.Text = "Edit Template";
+            this.showEditTemplate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.showEditTemplate.UseVisualStyleBackColor = true;
+            this.showEditTemplate.Click += new System.EventHandler(this.showEditTemplate_Click);
             // 
             // showCreateTemplate
             // 
@@ -152,16 +136,32 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 260);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(220, 60);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Backlog";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Border
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 667);
-            this.Controls.Add(this.panelMain);
+            this.Controls.Add(panelMain);
             this.Controls.Add(this.panelLeftNav);
             this.Name = "Border";
             this.Text = "Main";
-            this.panelMain.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
             this.panelLeftNav.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -171,10 +171,10 @@
         private System.Windows.Forms.Panel panelLeftNav;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button showManageTemplates;
         private System.Windows.Forms.Button showCreateTemplate;
         private System.Windows.Forms.Button showHome;
-        public System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Button showEditTemplate;
+        private System.Windows.Forms.Button button1;
+        public static System.Windows.Forms.Panel panelMain;
     }
 }
