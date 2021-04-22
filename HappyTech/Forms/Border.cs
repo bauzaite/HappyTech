@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyTech.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,13 +53,13 @@ namespace HappyTech
             openNewForm(new CreateTemplate());
         }
         /// <summary>
-        /// When user selects to 'Manage Templates'
-        /// the ManageTemplates form is shown.
+        /// Once user slelects 'Edit Template'
+        /// the Edit Template page is shown
         /// </summary>
-        private void showManageTemplates_Click(object sender, EventArgs e)
+        private void showEditTemplate_Click(object sender, EventArgs e)
         {
-            //display the manage templates page
-            openNewForm(new ManageTemplates());
+            //display the create template page
+            openNewForm(new EditTemplate());
         }
     }
 }

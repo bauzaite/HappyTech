@@ -17,10 +17,6 @@ namespace HappyTech
     {
         private static string connectionString = Properties.Settings.Default.dbConnection;
 
-        /// <summary>
-        /// This isnt used anywhere
-        /// WIP!
-        /// </summary>
         public static DataSet getData(string sqlQuery)
         {
             DataSet dataSet = new DataSet();
@@ -93,7 +89,6 @@ namespace HappyTech
             }
             return id.ToString();
         }
-
         /// <summary>
         /// Execute an insert data SQL command and dont expect a return.
         /// </summary>
@@ -105,15 +100,12 @@ namespace HappyTech
             {
                 SqlCommand com = new SqlCommand();
                 sc.Open();
-
                 com.Connection = sc;
                 com.CommandText = (sqlQuery);
                 com.ExecuteNonQuery();
                 sc.Close();
             }
         }
-
-
         public static List<Template> getTemplates(string sqlQuery)
         {
             List<Template> tempList = new List<Template>();

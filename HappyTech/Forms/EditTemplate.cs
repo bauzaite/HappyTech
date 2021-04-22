@@ -15,16 +15,28 @@ namespace HappyTech.Forms
         public EditTemplate()
         {
             InitializeComponent();
-            List<Template> userTemplates = new List<Template>();
-            string sqlQuery = "SELECT * FROM Template WHERE Template_owner = '" + Login.loggedInEmployee + "'";
-            userTemplates = DatabaseConnection.getTemplates(sqlQuery);
-            templateTitle.Text = userTemplates[ManageTemplates.templateChoice].templateTitle;
-            templateText.Text = userTemplates[ManageTemplates.templateChoice].templateText;
+            DataSet dataSet = DatabaseConnection.getData("SELECT * FROM Template WHERE Template_owner = '" + Login.loggedInEmployee + "'");
+            templateChoice.DataSource = dataSet.Tables[0];
+            templateChoice.DisplayMember = "Template_title";
         }
-        private void updateTemplateBTN_Click(object sender, EventArgs e)
+        private void templateChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Add SQL update function in DBconnection.
-            //UPDATE templates SET templateTitle = templateTitle.Text etc
+            templateTitle.Text = templateChoice.GetItemText(templateChoice.SelectedItem);
+            DataSet dataSet = DatabaseConnection.getData("SELECT Template.Template_ID, Template.Template_title, Text.Text FROM Text INNER JOIN Template ON Template.Template_ID=Text.Template_ID WHERE Template.Template_title = '" + templateChoice.GetItemText(templateChoice.SelectedItem) + "'");
+            previewTemplateText.DataSource = dataSet.Tables[0];
+            previewTemplateText.DisplayMember = "Text";
+        }
+        private void previewTemplateText_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            templateText.Text = previewTemplateText.GetItemText(previewTemplateText.SelectedItem);
+        }
+        private void updateText_Click(object sender, EventArgs e)
+        {
+            DatabaseConnection.insertDataNonQuery("UPDATE Text SET Text = '" + templateText.Text + "' WHERE Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
+        }
+        private void deleteText_Click(object sender, EventArgs e)
+        {
+            DatabaseConnection.insertDataNonQuery("DELETE FROM Text Where Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
         }
     }
 }

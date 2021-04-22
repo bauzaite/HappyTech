@@ -101,6 +101,5 @@ C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.csproj.C
 C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.exe
 C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.pdb
 C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.Forms.EditTemplate.resources
-C:\Users\arran\Documents\GitHub\HappyTech\HappyTech\obj\Debug\HappyTech.ManageTemplates.resources
 C:\Users\vaiva\Desktop\HappyTech\HappyTech\obj\Debug\HappyTech.Forms.EditTemplate.resources
 C:\Users\vaiva\Desktop\HappyTech\HappyTech\obj\Debug\HappyTech.ManageTemplates.resources
