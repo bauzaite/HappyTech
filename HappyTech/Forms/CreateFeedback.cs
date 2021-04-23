@@ -1,4 +1,7 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace HappyTech
@@ -72,6 +75,32 @@ namespace HappyTech
         private void emailInBacklog_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your email has been saved! You can find it in the 'Backlog' page.");
+
+            //When the user press Save to Backlog it actually allows you to save it to PDF
+            //Installed iTextSharp plugin to DS to make this available
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter="PDF file|*.pdf", ValidateNames = true }) 
+            {
+                if(sfd.ShowDialog() == DialogResult.OK)
+                {
+                    iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
+                    try
+                    {
+                        PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                        doc.Open();
+                        doc.Add(new iTextSharp.text.Paragraph(email.Text));
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        doc.Close();
+                    }
+                }
+                  
+            }
+            
         }
     }
 }
