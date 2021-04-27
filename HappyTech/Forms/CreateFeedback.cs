@@ -21,8 +21,6 @@ namespace HappyTech
         /// Loads information about the applicant and loads sentances into a
         /// BoxList from the chosen template that the user selected in the previous form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void createFeedback_Load(object sender, EventArgs e)
         {
             // Find template_ID of the chosen template
@@ -42,10 +40,9 @@ namespace HappyTech
         /// the email textbox is filled with the users checked text from
         /// the checkboxlist and a intro and outro is added to it.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void addToEmail_Click(object sender, EventArgs e)
         {
+            // check user has selected sentances
             if (generatedSentances.SelectedItems.Count != 0)
             {
                 string emailContent = "";
@@ -67,8 +64,6 @@ namespace HappyTech
         /// the email is saved in the database and can be later viewed in
         /// the backlog
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void emailInBacklog_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your email has been saved! You can find it in the 'Backlog' page.");

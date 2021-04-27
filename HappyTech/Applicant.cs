@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace HappyTech
 {
+    /// <summary>
+    /// This class contains a constructor which stores the information
+    /// about the usrs chosen applicant so other forms can access this
+    /// information.
+    /// </summary>
     class Applicant
     {
 
@@ -15,19 +20,7 @@ namespace HappyTech
         public string applicantStage;
         public string applicantSuccessful;
 
-        public Applicant()
-        {
-
-        }
-
-        public Applicant(string fname, string lname, string email, string stage, string success)
-        {
-            this.applicantFName = fname;
-            this.applicantLName = lname;
-            this.applicantEmail = email;
-            this.applicantStage = stage;
-            this.applicantSuccessful = success;
-        }
+        public Applicant(){}
 
         public override string ToString()
         {

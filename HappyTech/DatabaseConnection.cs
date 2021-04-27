@@ -8,10 +8,8 @@ using System.Windows.Forms;
 namespace HappyTech
 {
     /// <summary>
-    ///  WIP
-    ///  This class created a connection ith the database
-    ///  seems ike we create 3 connections here.
-    ///  // TODO: Make sure only 1 connection is created?
+    ///  This class creates a connection with the database
+    ///  and sends requests to it.
     /// </summary>
     static class DatabaseConnection
     {
