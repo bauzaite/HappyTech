@@ -3,8 +3,6 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
-    // TO DO: Depending on the user logged in, show the applicants assignemt to them in the box only.
-
     /// <summary>
     /// Home page gives user the option to select a applicant
     /// to create a email for.

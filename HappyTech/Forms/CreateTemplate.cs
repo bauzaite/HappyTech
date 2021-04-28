@@ -61,7 +61,6 @@ namespace HappyTech
 
             // Fill preview ListBox
             peviewTemplateTitle.Text = templateTitle.Text;
-            peviewTemplateTitle.ReadOnly = true;
             Helper.fillUserList("Text", "Text", "Template_ID", templateID, previewTemplateText, true);
         }
     }

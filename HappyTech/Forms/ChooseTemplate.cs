@@ -31,7 +31,8 @@ namespace HappyTech
                 Helper.fillUserList("Template", "Template_title", "Template_Owner", Login.loggedInEmployee, templateChoice, false);
 
                 // Load Applicant Information
-                Helper.LoadApllicantInformation(applicantName, applicantEmail, applicantStage, applicantSuccessful, Home.applicantRefrenceChoices.Text.ToString());
+                Helper.LoadApllicantInformation(applicantName, applicantEmail, applicantStage, applicantSuccessful,
+                                                Home.applicantRefrenceChoices.Text.ToString());
             }
             else
             {
