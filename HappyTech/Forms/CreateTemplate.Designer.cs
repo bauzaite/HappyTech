@@ -42,15 +42,12 @@
             previewTemplateText = new System.Windows.Forms.ListBox();
             this.templateBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataBase_Data = new HappyTech.DataBase_Data();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.templateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.templateTableAdapter = new HappyTech.DataBase_DataTableAdapters.TemplateTableAdapter();
             this.panelCreateTemplateTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.templateBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBase_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,14 +158,7 @@
             // 
             // dataBaseDataBindingSource
             // 
-            this.dataBaseDataBindingSource.DataSource = this.dataBase_Data;
             this.dataBaseDataBindingSource.Position = 0;
-            // 
-            // dataBase_Data
-            // 
-            this.dataBase_Data.DataSetName = "DataBase_Data";
-            this.dataBase_Data.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(535, 421);
@@ -189,11 +179,6 @@
             // templateBindingSource
             // 
             this.templateBindingSource.DataMember = "Template";
-//            this.templateBindingSource.DataSource = typeof(HappyTech.HappyTechDBDataSet);
-            // 
-            // templateTableAdapter
-            // 
-            this.templateTableAdapter.ClearBeforeFill = true;
             // 
             // CreateTemplate
             // 
@@ -219,8 +204,6 @@
             this.panelCreateTemplateTitle.ResumeLayout(false);
             this.panelCreateTemplateTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.templateBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBaseDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBase_Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,9 +224,7 @@
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.BindingSource templateBindingSource;
         private System.Windows.Forms.BindingSource dataBaseDataBindingSource;
-        private DataBase_Data dataBase_Data;
         private System.Windows.Forms.BindingSource templateBindingSource1;
-        private DataBase_DataTableAdapters.TemplateTableAdapter templateTableAdapter;
         public System.Windows.Forms.TextBox templateText;
         public static System.Windows.Forms.TextBox templateTitle;
     }

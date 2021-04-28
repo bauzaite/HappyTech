@@ -49,21 +49,15 @@ namespace HappyTech
             this.templatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             templateChoice = new System.Windows.Forms.ListBox();
             this.templateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.template_Title = new HappyTech.Template_Title();
             this.templatesBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.happyTechDBDataSet10 = new HappyTech.HappyTechDBDataSet10();
             this.templatesBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.templatesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.templatesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.templatesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.templatesTableAdapter3 = new HappyTech.HappyTechDBDataSet10TableAdapters.templatesTableAdapter();
-            this.templateTableAdapter = new HappyTech.Template_TitleTableAdapters.TemplateTableAdapter();
             this.panelCreateTemplateTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templateBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.template_Title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource2)).BeginInit();
@@ -202,22 +196,10 @@ namespace HappyTech
             // templateBindingSource
             // 
             this.templateBindingSource.DataMember = "Template";
-            this.templateBindingSource.DataSource = this.template_Title;
-            // 
-            // template_Title
-            // 
-            this.template_Title.DataSetName = "Template_Title";
-            this.template_Title.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // templatesBindingSource5
             // 
             this.templatesBindingSource5.DataMember = "templates";
-            this.templatesBindingSource5.DataSource = this.happyTechDBDataSet10;
-            // 
-            // happyTechDBDataSet10
-            // 
-            this.happyTechDBDataSet10.DataSetName = "HappyTechDBDataSet10";
-            this.happyTechDBDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // templatesBindingSource4
             // 
@@ -234,14 +216,6 @@ namespace HappyTech
             // templatesBindingSource3
             // 
             this.templatesBindingSource3.DataMember = "templates";
-            // 
-            // templatesTableAdapter3
-            // 
-            this.templatesTableAdapter3.ClearBeforeFill = true;
-            // 
-            // templateTableAdapter
-            // 
-            this.templateTableAdapter.ClearBeforeFill = true;
             // 
             // chooseTemplate
             // 
@@ -272,9 +246,7 @@ namespace HappyTech
             this.panelCreateTemplateTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templateBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.template_Title)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.happyTechDBDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templatesBindingSource2)).EndInit();
@@ -305,12 +277,8 @@ namespace HappyTech
         private System.Windows.Forms.BindingSource templatesBindingSource2;
         private System.Windows.Forms.BindingSource templatesBindingSource3;
         private System.Windows.Forms.BindingSource templatesBindingSource4;
-        private HappyTechDBDataSet10 happyTechDBDataSet10;
         private System.Windows.Forms.BindingSource templatesBindingSource5;
-        private HappyTechDBDataSet10TableAdapters.templatesTableAdapter templatesTableAdapter3;
-        private Template_Title template_Title;
         private System.Windows.Forms.BindingSource templateBindingSource;
-        private Template_TitleTableAdapters.TemplateTableAdapter templateTableAdapter;
         public static System.Windows.Forms.ListBox templateChoice;
     }
 }
