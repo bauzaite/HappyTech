@@ -1,2 +1,0 @@
-C:\Users\vaiva\Desktop\HappyTech\TestPink\obj\Debug\TestPink.csprojAssemblyReference.cache
-C:\Users\vaiva\Desktop\HappyTech\TestPink\obj\Debug\TestPink.csproj.CoreCompileInputs.cache

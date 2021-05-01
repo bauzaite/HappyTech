@@ -1,1 +1,0 @@
-﻿DELETE FROM Template WHERE NOT Template_ID = 9;

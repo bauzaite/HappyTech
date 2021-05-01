@@ -1,1 +1,0 @@
-﻿DELETE FROM Template WHERE Template_title NOT IN (title1);
