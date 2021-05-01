@@ -1,34 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HappyTech
+﻿namespace HappyTech
 {
-    class Applicant
+    /// <summary>
+    /// This class contains a constructor which stores the information
+    /// about the usrs chosen applicant so other forms can access this
+    /// information.
+    /// </summary>
+    public class Applicant
     {
-
         public string applicantFName;
         public string applicantLName;
         public string applicantEmail;
         public string applicantStage;
         public string applicantSuccessful;
 
-        public Applicant()
-        {
+        public Applicant(){}
 
-        }
-
-        public Applicant(string fname, string lname, string email, string stage, string success)
-        {
-            this.applicantFName = fname;
-            this.applicantLName = lname;
-            this.applicantEmail = email;
-            this.applicantStage = stage;
-            this.applicantSuccessful = success;
-        }
-
+        /// <summary>
+        /// Used for testing the applcant contents.
+        /// </summary>
+        /// <returns>Applicant Properties</returns>
         public override string ToString()
         {
             return applicantFName + " " + applicantLName + " " + applicantEmail + " " + applicantStage + " " + applicantSuccessful;

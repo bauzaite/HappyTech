@@ -25,7 +25,7 @@ namespace HappyTech
             {
                 // Send data request to the database and fill the constructor
                 string sqlQuery = "SELECT * FROM Applicant_Information WHERE Applicant_Refrence = '" + applicantIdentity + "'";
-                DatabaseConnection.loadApplicantInformation(sqlQuery);
+                DatabaseConnection.Instance().loadApplicantInformation(sqlQuery);
             }
 
             // Fill the given textboxes with the information
@@ -47,11 +47,13 @@ namespace HappyTech
         public static void fillUserList(string table, string column, string columnID, string ID, ListBox list, bool clearlist)
         {
             // Count how many columns there are with a specific column identification
-            int count = Int32.Parse(DatabaseConnection.basicRequest("SELECT COUNT(" + column +") FROM "+ table +" WHERE " + columnID + " = '" + ID + "'", true));
+            int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(" + column +") FROM "+ table +" WHERE "
+                                    + columnID + " = '" + ID + "'", true));
             string[] requestedColumnData = new string[count];
 
             // Fill the array with the specified column identification
-            DatabaseConnection.basicRequestArray("SELECT " + column + " FROM " + table + " WHERE " + columnID + " = '" + ID + "'", count).CopyTo(requestedColumnData, 0);
+            DatabaseConnection.Instance().basicRequestArray("SELECT " + column + " FROM " + table + " WHERE " + columnID + " = '"
+                                                  + ID + "'", count).CopyTo(requestedColumnData, 0);
 
             // Clear old data from sent list?
             if (clearlist == true)
