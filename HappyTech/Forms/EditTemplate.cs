@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HappyTech.Forms
 {
     public partial class EditTemplate : Form
     {
+        //Fill the listbox from the database
         public EditTemplate()
         {
             InitializeComponent();
@@ -19,6 +14,7 @@ namespace HappyTech.Forms
             templateChoice.DataSource = dataSet.Tables[0];
             templateChoice.DisplayMember = "Template_title";
         }
+        //Display the text correlating to the title selected
         private void templateChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
             templateTitle.Text = templateChoice.GetItemText(templateChoice.SelectedItem);
@@ -26,14 +22,17 @@ namespace HappyTech.Forms
             previewTemplateText.DataSource = dataSet.Tables[0];
             previewTemplateText.DisplayMember = "Text";
         }
+        //Display the selected text to update/delete
         private void previewTemplateText_SelectedIndexChanged(object sender, EventArgs e)
         {
             templateText.Text = previewTemplateText.GetItemText(previewTemplateText.SelectedItem);
         }
+        //Update selected text
         private void updateText_Click(object sender, EventArgs e)
         {
             DatabaseConnection.Instance().insertDataNonQuery("UPDATE Text SET Text = '" + templateText.Text + "' WHERE Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
         }
+        //Delete selected text
         private void deleteText_Click(object sender, EventArgs e)
         {
             DatabaseConnection.Instance().insertDataNonQuery("DELETE FROM Text Where Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
