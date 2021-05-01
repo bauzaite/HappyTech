@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-
 
 namespace HappyTech
 {
@@ -120,36 +118,6 @@ namespace HappyTech
                 com.ExecuteNonQuery();
                 sc.Close();
             }
-        }
-        public List<Template> getTemplates(string sqlQuery)
-        {
-            List<Template> tempList = new List<Template>();
-            SqlConnection sqlCon;
-            using (sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlCon);
-                SqlDataReader reader = sqlCommand.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    try
-                    {
-                        Template template = new Template
-                        {
-                            templateTitle = reader["Template_title"].ToString(),
-                            templateOwner = reader["Template_owner"].ToString()
-                        };
-                        tempList.Add(template);
-                    }
-                    catch(Exception exc) 
-                    {
-                        MessageBox.Show(exc.Message);
-                    }
-                }
-                reader.Close();
-            }
-            return tempList;
         }
 
         /// <summary>

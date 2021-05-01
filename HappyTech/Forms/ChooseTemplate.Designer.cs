@@ -44,7 +44,7 @@ namespace HappyTech
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.applicantStage = new System.Windows.Forms.TextBox();
             this.applicantSuccessful = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nextStep = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.templatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             templateChoice = new System.Windows.Forms.ListBox();
@@ -162,15 +162,15 @@ namespace HappyTech
             this.applicantSuccessful.Size = new System.Drawing.Size(245, 20);
             this.applicantSuccessful.TabIndex = 20;
             // 
-            // button1
+            // nextStep
             // 
-            this.button1.Location = new System.Drawing.Point(541, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Next Step";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.nextStep_Click);
+            this.nextStep.Location = new System.Drawing.Point(541, 310);
+            this.nextStep.Name = "nextStep";
+            this.nextStep.Size = new System.Drawing.Size(101, 23);
+            this.nextStep.TabIndex = 21;
+            this.nextStep.Text = "Next Step";
+            this.nextStep.UseVisualStyleBackColor = true;
+            this.nextStep.Click += new System.EventHandler(this.nextStep_Click);
             // 
             // textBox7
             // 
@@ -225,7 +225,7 @@ namespace HappyTech
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(templateChoice);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nextStep);
             this.Controls.Add(this.applicantSuccessful);
             this.Controls.Add(this.applicantStage);
             this.Controls.Add(this.textBox6);
@@ -270,7 +270,7 @@ namespace HappyTech
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox applicantStage;
         private System.Windows.Forms.TextBox applicantSuccessful;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nextStep;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.BindingSource templatesBindingSource;
         private System.Windows.Forms.BindingSource templatesBindingSource1;

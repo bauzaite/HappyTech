@@ -15,7 +15,7 @@ namespace HappyTech
         }
 
         /// <summary>
-        /// Loads the 'Home' form with information with applicans.
+        /// Loads the 'Home' form with information with applicants.
         /// </summary>
         private void Home_Load(object sender, EventArgs e)
         {

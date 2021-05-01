@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HappyTech
+﻿namespace HappyTech
 {
     /// <summary>
     /// This class contains a constructor which stores the information
@@ -13,7 +7,6 @@ namespace HappyTech
     /// </summary>
     public class Applicant
     {
-
         public string applicantFName;
         public string applicantLName;
         public string applicantEmail;
@@ -22,6 +15,10 @@ namespace HappyTech
 
         public Applicant(){}
 
+        /// <summary>
+        /// Used for testing the applcant contents.
+        /// </summary>
+        /// <returns>Applicant Properties</returns>
         public override string ToString()
         {
             return applicantFName + " " + applicantLName + " " + applicantEmail + " " + applicantStage + " " + applicantSuccessful;

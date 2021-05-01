@@ -32,11 +32,11 @@
             panelMain = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panelLeftNav = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.showEditTemplate = new System.Windows.Forms.Button();
             this.showCreateTemplate = new System.Windows.Forms.Button();
             this.showHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             panelMain.SuspendLayout();
             this.panelLeftNav.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,22 @@
             this.panelLeftNav.Name = "panelLeftNav";
             this.panelLeftNav.Size = new System.Drawing.Size(220, 667);
             this.panelLeftNav.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 260);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(220, 60);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Backlog";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // showEditTemplate
             // 
@@ -136,22 +152,6 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(0, 260);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(220, 60);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Backlog";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Border
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +164,6 @@
             panelMain.ResumeLayout(false);
             this.panelLeftNav.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion

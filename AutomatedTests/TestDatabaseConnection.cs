@@ -6,7 +6,8 @@ namespace AutomatedTests
     public class TestDatabaseConnection
     {
         /// <summary>
-        /// Test that basicRequest() returns an integer.
+        /// Test that basicRequest() returns requested integer
+        /// in string form..
         /// </summary>
         [TestMethod]
         public void TestBasicRequestNumber()
@@ -17,7 +18,7 @@ namespace AutomatedTests
         }
 
         /// <summary>
-        /// Test that basicRequest() returns a string.
+        /// Test that basicRequest() returns correct string.
         /// </summary>
         [TestMethod]
         public void TestBasicRequestString()
