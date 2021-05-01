@@ -24,19 +24,19 @@ namespace HappyTech
         private void submitTemplateBTN_Click(object sender, EventArgs e)
         {
             saveCount++;
-            bool titleExists = DatabaseConnection.checkDataExists("SELECT Template_title FROM Template WHERE Template_title = '"
+            bool titleExists = DatabaseConnection.Instance().checkDataExists("SELECT Template_title FROM Template WHERE Template_title = '"
                                                                   + templateTitle.Text + "'");
 
              // If you are creating a new template AND the title is unique.
             if (saveCount == 1 && titleExists == false)
             {
                 // Create a new template by saving its title and creators username. Save the new assigned Template_ID by the database.
-                templateID = DatabaseConnection.insertDataScalar(@"INSERT INTO Template (Template_title, Template_owner) VALUES ('"
+                templateID = DatabaseConnection.Instance().insertDataScalar(@"INSERT INTO Template (Template_title, Template_owner) VALUES ('"
                                                                  + templateTitle.Text + "','" + Login.loggedInEmployee + "' );" +
                                                                  "SELECT CAST(scope_identity() AS int)");
 
                 // Save the new saved Text and assign the template_ID to it.
-                DatabaseConnection.insertDataNonQuery(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "'," +
+                DatabaseConnection.Instance().insertDataNonQuery(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "'," +
                                                       " (SELECT Template_ID from Template WHERE Template_ID ='" + templateID + "'))");
             }
             // If you are creating a new template AND the title isnt unique.
@@ -51,7 +51,7 @@ namespace HappyTech
                 templateTitle.ReadOnly = true; // Makes program more clear since the user can only keep saving sentances to the same template
 
                 // Save the new saved Text and assign the template_ID to it.
-                DatabaseConnection.insertDataNonQuery(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "'," +
+                DatabaseConnection.Instance().insertDataNonQuery(@"INSERT INTO Text (Text, Template_ID) VALUES ('" + templateText.Text + "'," +
                                                       " (SELECT Template_ID from Template WHERE Template_ID ='" + templateID + "'))");
             }
             else

@@ -9,7 +9,7 @@ namespace HappyTech
     /// <summary>
     /// Class with a constructor that creates new template
     /// </summary>
-    class Template
+    public class Template
     {
         public string templateTitle;
         public string templateText;

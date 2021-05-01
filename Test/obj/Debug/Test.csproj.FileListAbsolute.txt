@@ -1,0 +1,12 @@
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Test.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Test.pdb
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Microsoft.Analytics.UnitTest.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\vaiva\Desktop\HappyTech\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\vaiva\Desktop\HappyTech\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\vaiva\Desktop\HappyTech\Test\obj\Debug\Test.dll
+C:\Users\vaiva\Desktop\HappyTech\Test\obj\Debug\Test.pdb

@@ -15,14 +15,14 @@ namespace HappyTech.Forms
         public EditTemplate()
         {
             InitializeComponent();
-            DataSet dataSet = DatabaseConnection.getData("SELECT * FROM Template WHERE Template_owner = '" + Login.loggedInEmployee + "'");
+            DataSet dataSet = DatabaseConnection.Instance().getData("SELECT * FROM Template WHERE Template_owner = '" + Login.loggedInEmployee + "'");
             templateChoice.DataSource = dataSet.Tables[0];
             templateChoice.DisplayMember = "Template_title";
         }
         private void templateChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
             templateTitle.Text = templateChoice.GetItemText(templateChoice.SelectedItem);
-            DataSet dataSet = DatabaseConnection.getData("SELECT Template.Template_ID, Template.Template_title, Text.Text FROM Text INNER JOIN Template ON Template.Template_ID=Text.Template_ID WHERE Template.Template_title = '" + templateChoice.GetItemText(templateChoice.SelectedItem) + "'");
+            DataSet dataSet = DatabaseConnection.Instance().getData("SELECT Template.Template_ID, Template.Template_title, Text.Text FROM Text INNER JOIN Template ON Template.Template_ID=Text.Template_ID WHERE Template.Template_title = '" + templateChoice.GetItemText(templateChoice.SelectedItem) + "'");
             previewTemplateText.DataSource = dataSet.Tables[0];
             previewTemplateText.DisplayMember = "Text";
         }
@@ -32,11 +32,11 @@ namespace HappyTech.Forms
         }
         private void updateText_Click(object sender, EventArgs e)
         {
-            DatabaseConnection.insertDataNonQuery("UPDATE Text SET Text = '" + templateText.Text + "' WHERE Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
+            DatabaseConnection.Instance().insertDataNonQuery("UPDATE Text SET Text = '" + templateText.Text + "' WHERE Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
         }
         private void deleteText_Click(object sender, EventArgs e)
         {
-            DatabaseConnection.insertDataNonQuery("DELETE FROM Text Where Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
+            DatabaseConnection.Instance().insertDataNonQuery("DELETE FROM Text Where Text = '" + previewTemplateText.GetItemText(previewTemplateText.SelectedItem) + "'");
         }
     }
 }

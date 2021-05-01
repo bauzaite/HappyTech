@@ -21,7 +21,7 @@ namespace HappyTech
         /// </summary>
         private void chooseTemplate_Load(object sender, EventArgs e)
         {
-            int count = Int32.Parse(DatabaseConnection.basicRequest("SELECT COUNT(Template_title) FROM Template WHERE Template_Owner = '"
+            int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(Template_title) FROM Template WHERE Template_Owner = '"
                                     + Login.loggedInEmployee + "'", true));
 
             // Check if the user has saved templates

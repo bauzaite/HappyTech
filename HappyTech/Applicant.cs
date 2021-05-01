@@ -11,7 +11,7 @@ namespace HappyTech
     /// about the usrs chosen applicant so other forms can access this
     /// information.
     /// </summary>
-    class Applicant
+    public class Applicant
     {
 
         public string applicantFName;

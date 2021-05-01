@@ -19,12 +19,12 @@ namespace HappyTech
         /// </summary>
         private void Home_Load(object sender, EventArgs e)
         {
-            int count = Int32.Parse(DatabaseConnection.basicRequest("SELECT COUNT(Applicant_Refrence) FROM Applicant_Information", true));
+            int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(Applicant_Refrence) FROM Applicant_Information", true));
 
             if (count != 0){
                 string[] applicantRefrences = new string[count];
                 // Fill the templates array with template_text
-                DatabaseConnection.basicRequestArray("SELECT Applicant_Refrence FROM Applicant_Information", count).CopyTo(applicantRefrences, 0);
+                DatabaseConnection.Instance().basicRequestArray("SELECT Applicant_Refrence FROM Applicant_Information", count).CopyTo(applicantRefrences, 0);
 
                 // Fill the ListBox with all availible templates
                 for (int i = 0; i < count; i++)

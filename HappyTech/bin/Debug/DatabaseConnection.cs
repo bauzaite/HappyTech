@@ -8,16 +8,31 @@ using System.Windows.Forms;
 namespace HappyTech
 {
     /// <summary>
-    ///  WIP
-    ///  This class created a connection ith the database
-    ///  seems ike we create 3 connections here.
-    ///  // TODO: Make sure only 1 connection is created?
+    ///  This class creates a connection with the database
+    ///  and sends requests to it.
     /// </summary>
-    static class DatabaseConnection
+    class DatabaseConnection
     {
-        private static string connectionString = Properties.Settings.Default.dbConnection;
+        private static string connectionString;
+        private static DatabaseConnection instanceConnection;
 
-        public static DataSet getData(string sqlQuery)
+
+        private DatabaseConnection()
+        {
+            connectionString = Properties.Settings.Default.dbConnection;
+        }
+
+        public static DatabaseConnection Instance()
+        {
+            if(instanceConnection == null)
+            {
+                instanceConnection = new DatabaseConnection();
+            }
+            return instanceConnection;
+        }
+
+
+        public DataSet getData(string sqlQuery)
         {
             DataSet dataSet = new DataSet();
 
@@ -37,7 +52,7 @@ namespace HappyTech
         /// Fills applicant constructor with the relevant applicants information.
         /// </summary>
         /// <param name="sqlQuery">SQL Command giving the relevant applicants identification.</param>
-        public static void loadApplicantInformation(string sqlQuery)
+        public void loadApplicantInformation(string sqlQuery)
         {
             SqlConnection sqlCon;
             using (sqlCon = new SqlConnection(connectionString))
@@ -73,7 +88,7 @@ namespace HappyTech
         /// </summary>
         /// <param name="sqlQuery">Requests for specific data in column.</param>
         /// <returns>Requested data from the SQL Command</returns>
-        public static string insertDataScalar(string sqlQuery)
+        public string insertDataScalar(string sqlQuery)
         {
             int id = 0;
             SqlConnection sc;
@@ -93,7 +108,7 @@ namespace HappyTech
         /// Execute an insert data SQL command and dont expect a return.
         /// </summary>
         /// <param name="sqlQuery">Requests for specific data in column.</param>
-        public static void insertDataNonQuery(string sqlQuery)
+        public void insertDataNonQuery(string sqlQuery)
         {
             SqlConnection sc;
             using (sc = new SqlConnection(connectionString))
@@ -106,7 +121,7 @@ namespace HappyTech
                 sc.Close();
             }
         }
-        public static List<Template> getTemplates(string sqlQuery)
+        public List<Template> getTemplates(string sqlQuery)
         {
             List<Template> tempList = new List<Template>();
             SqlConnection sqlCon;
@@ -142,7 +157,7 @@ namespace HappyTech
         /// </summary>
         /// <param name="sqlQuery">Requests for specific data in column.</param>
         /// <returns></returns>
-        public static bool checkDataExists(string sqlQuery)
+        public bool checkDataExists(string sqlQuery)
         {
             bool check;
             SqlConnection sqlCon;
@@ -173,7 +188,7 @@ namespace HappyTech
         /// <param name="sqlQuery">SQL Command sent to  the Database</param>
         /// <param name="number">If you are expecting a number to be returned</param>
         /// <returns>String of the SQL Command return</returns>
-        public static string basicRequest(string sqlQuery, bool number)
+        public string basicRequest(string sqlQuery, bool number)
         {
             string SQLReturn = "Error!";
             SqlConnection sqlConn;
@@ -209,7 +224,7 @@ namespace HappyTech
         /// <param name="sqlQuery">SQL Command sent to  the Database</param>
         /// <param name="count">How big is the array</param>
         /// <returns>Array of requested data</returns>
-        public static string[] basicRequestArray(string sqlQuery, int count)
+        public string[] basicRequestArray(string sqlQuery, int count)
         {
             string[] requestedArray = new string[count];
             //sqlQuery = "SELECT Text FROM Text WHERE Template_ID = 158";

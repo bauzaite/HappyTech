@@ -24,7 +24,7 @@ namespace HappyTech
         private void createFeedback_Load(object sender, EventArgs e)
         {
             // Find template_ID of the chosen template
-            int templateID = Int32.Parse(DatabaseConnection.basicRequest("SELECT Template_ID FROM Template WHERE Template_title = '" + chooseTemplate.templateChoice.Text + "'", true));
+            int templateID = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT Template_ID FROM Template WHERE Template_title = '" + chooseTemplate.templateChoice.Text + "'", true));
 
             // Load Saved sentances from the chosen template
             Helper.fillUserList("Text", "Text", "Template_ID", templateID.ToString(), generatedSentances, false);
