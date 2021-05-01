@@ -11,7 +11,7 @@ namespace HappyTech
     ///  This class creates a connection with the database
     ///  and sends requests to it.
     /// </summary>
-    class DatabaseConnection
+    public class DatabaseConnection
     {
         private string connectionString;
         private static DatabaseConnection instanceConnection;
