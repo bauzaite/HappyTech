@@ -74,8 +74,6 @@ namespace HappyTech
         /// <param name="e"></param>
         private void emailInBacklog_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Your email has been saved! You can find it in the 'Backlog' page.");
-
             //When the user press Save to Backlog it actually allows you to save it to PDF
             //Installed iTextSharp plugin to DS to make this available
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter="PDF file|*.pdf", ValidateNames = true }) 
@@ -100,7 +98,9 @@ namespace HappyTech
                 }
                   
             }
-            
+
+            MessageBox.Show("Your email has been saved! You can find it in the 'Backlog' page.");
+
         }
     }
 }

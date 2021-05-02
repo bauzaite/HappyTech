@@ -61,5 +61,11 @@ namespace HappyTech
             //display the create template page
             openNewForm(new EditTemplate());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //display the backlog page
+            openNewForm(new Backlog());
+        }
     }
 }
