@@ -130,3 +130,12 @@ C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\BouncyCastle.Cryp
 C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\itextsharp.dll
 C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\itextsharp.xml
 C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\obj\Debug\HappyTech.Forms.Backlog.resources
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\MailKit.dll
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\MimeKit.dll
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\System.Buffers.dll
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\MailKit.pdb
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\MailKit.xml
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\MimeKit.pdb
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\MimeKit.xml
+C:\Users\ignas\Desktop\Projektas\HappyTech\HappyTech\bin\Debug\System.Buffers.xml
