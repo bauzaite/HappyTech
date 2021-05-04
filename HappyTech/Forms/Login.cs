@@ -3,6 +3,10 @@ using System.Windows.Forms;
 
 namespace HappyTech
 {
+    // USER CREDENTIALS
+    // USERNAME: admin
+    // PASSWORD: guest
+
     /// <summary>
     /// First form the user gets displayed.
     /// This is the login form where user

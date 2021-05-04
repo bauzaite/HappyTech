@@ -21,22 +21,29 @@ namespace HappyTech
         /// </summary>
         private void chooseTemplate_Load(object sender, EventArgs e)
         {
-            int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(Template_title) FROM Template WHERE Template_Owner = '"
-                                    + Login.loggedInEmployee + "'", true));
-
-            // Check if the user has saved templates
-            if (count != 0)
+            try
             {
-                // Load Template choices
-                Helper.fillUserList("Template", "Template_title", "Template_Owner", Login.loggedInEmployee, templateChoice, false);
+                int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(Template_title) FROM Template WHERE Template_Owner = '"
+                                        + Login.loggedInEmployee + "'", true));
 
-                // Load Applicant Information
-                Helper.LoadApllicantInformation(applicantName, applicantEmail, applicantStage, applicantSuccessful,
-                                                Home.applicantRefrenceChoices.Text.ToString());
+                // Check if the user has saved templates
+                if (count != 0)
+                {
+                    // Load Template choices
+                    Helper.fillUserList("Template", "Template_title", "Template_Owner", Login.loggedInEmployee, templateChoice, false);
+
+                    // Load Applicant Information
+                    Helper.LoadApllicantInformation(applicantName, applicantEmail, applicantStage, applicantSuccessful,
+                                                    Home.applicantRefrenceChoices.Text.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Please create a template in the 'Create Template' page.");
+                }
             }
-            else
+            catch (Exception es)
             {
-                MessageBox.Show("Please create a template in the 'Create Template' page.");
+                MessageBox.Show(es.Message);
             }
         }
 
@@ -45,21 +52,28 @@ namespace HappyTech
         /// </summary>
         private void nextStep_Click(object sender, EventArgs e)
         {
-            // check user has selected an applicant
-            if (templateChoice.Text.ToString() != "")
+            try
             {
-                // take user to the next step
-                Border.panelMain.Controls.Clear();
-                createFeedback createFeed = new createFeedback();
-                createFeed.TopLevel = false;
-                createFeed.AutoScroll = true;
-                Border.panelMain.Controls.Add(createFeed);
-                createFeed.Dock = DockStyle.Fill;
-                createFeed.Show();
+                // check user has selected an applicant
+                if (templateChoice.Text.ToString() != "")
+                {
+                    // take user to the next step
+                    Border.panelMain.Controls.Clear();
+                    createFeedback createFeed = new createFeedback();
+                    createFeed.TopLevel = false;
+                    createFeed.AutoScroll = true;
+                    Border.panelMain.Controls.Add(createFeed);
+                    createFeed.Dock = DockStyle.Fill;
+                    createFeed.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a template.");
+                }
             }
-            else
+            catch (Exception es)
             {
-                MessageBox.Show("Please select a template.");
+                MessageBox.Show(es.Message);
             }
         }
     }

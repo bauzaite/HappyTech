@@ -19,22 +19,31 @@ namespace HappyTech
         /// </summary>
         private void Home_Load(object sender, EventArgs e)
         {
-            int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(Applicant_Refrence) FROM Applicant_Information", true));
+            try
+            {
+                int count = Int32.Parse(DatabaseConnection.Instance().basicRequest("SELECT COUNT(Applicant_Refrence) FROM " +
+                                                                                    "Applicant_Information", true));
 
-            if (count != 0){
-                string[] applicantRefrences = new string[count];
-                // Fill the templates array with template_text
-                DatabaseConnection.Instance().basicRequestArray("SELECT Applicant_Refrence FROM Applicant_Information", count).CopyTo(applicantRefrences, 0);
+                if (count != 0) {
+                    string[] applicantRefrences = new string[count];
+                    // Fill the templates array with template_text
+                    DatabaseConnection.Instance().basicRequestArray("SELECT Applicant_Refrence FROM Applicant_Information",
+                                                                    count).CopyTo(applicantRefrences, 0);
 
-                // Fill the ListBox with all availible templates
-                for (int i = 0; i < count; i++)
+                    // Fill the ListBox with all availible templates
+                    for (int i = 0; i < count; i++)
+                    {
+                        applicantRefrenceChoices.Items.Add(applicantRefrences[i]);
+                    }
+                }
+                else
                 {
-                    applicantRefrenceChoices.Items.Add(applicantRefrences[i]);
+                    MessageBox.Show("You have no applicants to respond to!");
                 }
             }
-            else
+            catch (Exception es)
             {
-                MessageBox.Show("You have no applicants to respond to!");
+                MessageBox.Show(es.Message);
             }
         }
        
@@ -44,21 +53,29 @@ namespace HappyTech
         /// </summary>
         private void reviewButton_Click(object sender, EventArgs e)
         {
-            // check user has selected an applicant
-            if (applicantRefrenceChoices.Text.ToString() != "")
+            try
             {
-                Border.panelMain.Controls.Clear();
-                chooseTemplate chooseTemp = new chooseTemplate();
-                chooseTemp.TopLevel = false;
-                chooseTemp.AutoScroll = true;
-                Border.panelMain.Controls.Add(chooseTemp);
-                chooseTemp.Dock = DockStyle.Fill;
-                chooseTemp.Show();
+                // check user has selected an applicant
+                if (applicantRefrenceChoices.Text.ToString() != "")
+                {
+                    Border.panelMain.Controls.Clear();
+                    chooseTemplate chooseTemp = new chooseTemplate();
+                    chooseTemp.TopLevel = false;
+                    chooseTemp.AutoScroll = true;
+                    Border.panelMain.Controls.Add(chooseTemp);
+                    chooseTemp.Dock = DockStyle.Fill;
+                    chooseTemp.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please select an applicant.");
+                }
             }
-            else
+            catch (Exception es)
             {
-                MessageBox.Show("Please select an applicant.");
+                MessageBox.Show(es.Message);
             }
+
         }
     }
 }
